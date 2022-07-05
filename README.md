@@ -1,7 +1,7 @@
 # barrel
 
 <img alt="barrel" align="right"
-     src="https://user-images.githubusercontent.com/29029116/177223659-e66078e8-9d4c-447c-ba12-464f2fbc40c9.png" width="280"/>
+     src="https://user-images.githubusercontent.com/29029116/177249265-bb4f6127-5b4d-4e84-95e7-1e4ee46dc27b.png" width="280"/>
 
 #### [C++ wrapper for the [homebrew](brew.sh) CLI]
 
