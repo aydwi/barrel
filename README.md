@@ -7,4 +7,8 @@
 
 &nbsp;
 
-barrel is a C++ library that provides programmatic access to the homebrew command line interface. It can be used to build, for example, GUI frontends or other wrappers around homebrew. It exposes a succinct C++ API, which can be integrated with a wide variety of libraries/tools/frameworks.
+`barrel` is a C++ library that provides programmatic access to the homebrew command line interface.
+
+It can be used to build, for example, GUI frontends or generic wrappers around homebrew. Or it can be used to develop bespoke tooling to customize or automate homebrew-based package configuration for your CI/CD jobs. Or it can help you work with homebrew on headless systems.
+
+`barrel` exposes a succinct C++ API which can be integrated with a wide variety of libraries, tools and frameworks. Find examples later in this guide.
