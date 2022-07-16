@@ -8,35 +8,3 @@
 &nbsp;
 
 barrel is a C++ library that provides programmatic access to the homebrew command line interface. It can be used to build, for example, GUI frontends or other wrappers around homebrew. It exposes a succinct C++ API, which can be integrated with a wide variety of libraries/tools/frameworks.
-
-barrel is also the library used in my homebrew GUI for macOS: Easybrew
-
-&nbsp;
-
-### Background
-
-###### Coming soon...
-
-&nbsp;
-
-### Examples
-
-###### Coming soon...
-
-&nbsp;
-
-### Installation and usage
-
-#### End-user
-
-###### Coming soon...
-
-#### Developer
-
-###### Coming soon...
-
-&nbsp;
-
-### API
-
-###### Coming soon...
