@@ -4,7 +4,7 @@ if(NOT APPLE)
     message(FATAL_ERROR "Configuration stopped. Not an Apple platform!")
 endif()
 
-set(namespace "barrel")
+set(namespace "brew")
 
 project("Barrel"
     VERSION 0.1
@@ -55,7 +55,7 @@ if(DEFINED CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     )
     set(CMAKE_INSTALL_PREFIX
         "${CMAKE_SOURCE_DIR}/install"
-        CACHE PATH "Where the library will be installed at"
+        CACHE PATH "Where the library will be installed at" FORCE
     )
 else()
     message(
@@ -66,7 +66,7 @@ else()
 endif()
 
 set(public_headers
-    include/barrel.h
+    include/brew.h
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${public_headers}")
