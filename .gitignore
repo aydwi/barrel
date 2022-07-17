@@ -39,3 +39,4 @@ install/*
 
 # Other
 .DS_Store
+.vscode
