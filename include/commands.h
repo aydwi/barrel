@@ -2,16 +2,21 @@
 #define COMMANDS_H_
 
 #include <cstdint>
+#include <cstddef>
 #include <iostream>
 #include <map>
 #include <queue>
 #include <string>
+#include <concepts>
 
 #include <helpers.h>
 
 std::string const OPT_PREFIX { "--" };
 
-struct BrewCommandType {
+template<typename E>
+concept EnumType = std::is_enum_v<E>;
+
+namespace BrewCommandType {
     enum class Builtin;
     enum class BuiltinDev;
     enum class External;
@@ -231,63 +236,11 @@ std::map<BrewCommandType::External, std::string> const BrewCommandHead::External
     { BrewCommandType::External::POSTGRESQL_UPGRADE_DATABASE,   "postgresql-upgrade-database" },
 };
 
-/*FIXME
-struct BuiltinInfo {
-    BrewCommand identifier;
-    std::string name;
-    bool is_opt_like;
-};
-
-struct BuiltinDevInfo {
-    BrewCommand identifier;
-    std::string name;
-};
-
-struct ExternalInfo {
-    BrewCommand identifier;
-    std::string name;
-};
-
-class Command {
+template <EnumType E, typename ...Args>
+class BrewCommand {
 private:
-    BrewCommandType type_;
-    BrewCommand cmd_;
-    union {
-        BuiltinInfo bi_;
-        BuiltinDevInfo bdi_;
-        ExternalInfo ei_;
-    };
-
 public:
-    Command(const BrewCommandType& type, const BrewCommand& cmd)
-        : type_(type)
-        , cmd_(cmd)
-    {
-        switch (type_) {
-        case BrewCommandType::Builtin:
-            auto const identifier = cmd_;
-            bool const is_opt_like = enumUnderlyingType(cmd_) < 0;
-            std::string name = "name";
-            bi_ = { identifier, name, is_opt_like };
-            execute(cmd_);
-            break;
-        case BrewCommandType::BuiltinDev:
-            // bdi_ = { false };
-            break;
-        case BrewCommandType::External:
-            // ei_ = { false };
-            break;
-        default:
-            break;
-        }
-    }
-
-    void execute(BrewCommand);
 };
 
-void Command::execute(BrewCommand cmd)
-{
-    std::cout << "ID: " << static_cast<std::underlying_type<BrewCommand>::type>(cmd) << std::endl;
-}
-*/
+
 #endif
