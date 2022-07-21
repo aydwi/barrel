@@ -1,27 +1,26 @@
-#ifndef COMMANDS_H_
-#define COMMANDS_H_
+#ifndef BARREL_H_
+#define BARREL_H_
 
-#include <cstdint>
+#include <barrel_helpers.h>
+#include <barrel_meta.h>
+
+#include <concepts>
 #include <cstddef>
+#include <cstdint>
 #include <iostream>
 #include <map>
 #include <queue>
 #include <string>
-#include <concepts>
 
-#include <helpers.h>
-
-std::string const OPT_PREFIX { "--" };
-
-template<typename E>
-concept EnumType = std::is_enum_v<E>;
+std::string const OPT_PREFIX{"--"};
 
 namespace BrewCommandType {
-    enum class Builtin;
-    enum class BuiltinDev;
-    enum class External;
-};
+enum class Builtin;
+enum class BuiltinDev;
+enum class External;
+}; // namespace BrewCommandType
 
+// clang-format off
 enum class BrewCommandType::Builtin {
     CACHE = 0x1,
     CASKROOM,
@@ -125,6 +124,7 @@ enum class BrewCommandType::External {
     DETERMINE_REBOTTLE_RUNNERS,
     POSTGRESQL_UPGRADE_DATABASE,
 };
+// clang-format on
 
 struct BrewCommandHead {
     static std::map<BrewCommandType::Builtin, std::string> const Builtin;
@@ -132,6 +132,7 @@ struct BrewCommandHead {
     static std::map<BrewCommandType::External, std::string> const External;
 };
 
+// clang-format off
 std::map<BrewCommandType::Builtin, std::string> const BrewCommandHead::Builtin {
     { BrewCommandType::Builtin::CACHE,                          "--cache" },
     { BrewCommandType::Builtin::CASKROOM,                       "--caskroom" },
@@ -235,12 +236,16 @@ std::map<BrewCommandType::External, std::string> const BrewCommandHead::External
     { BrewCommandType::External::DETERMINE_REBOTTLE_RUNNERS,    "determine-rebottle-runners" },
     { BrewCommandType::External::POSTGRESQL_UPGRADE_DATABASE,   "postgresql-upgrade-database" },
 };
+// clang-format on
 
-template <EnumType E, typename ...Args>
+template <EnumType E>
+
 class BrewCommand {
 private:
-public:
-};
+    std::string head_;
 
+public:
+    BrewCommand(const std::string &head);
+};
 
 #endif

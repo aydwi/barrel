@@ -4,110 +4,80 @@ if(NOT APPLE)
     message(FATAL_ERROR "Configuration stopped. Not an Apple platform!")
 endif()
 
-set(namespace "brew")
+set(namespace "Barrel")
 
-project("Barrel"
+project(
+    "Barrel"
     VERSION 0.1
     DESCRIPTION "C++ wrapper for the homebrew CLI"
-    LANGUAGES CXX
-)
+    LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
+
 if(NOT CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-    message(STATUS "Configuring child project of ${CMAKE_PROJECT_NAME} - ${PROJECT_NAME}")
+    message(
+        STATUS "Configuring child project of ${CMAKE_PROJECT_NAME}: ${PROJECT_NAME}"
+    )
 else()
     message(STATUS "Configuring top-level project - ${PROJECT_NAME}")
 endif()
 
-add_library(${PROJECT_NAME} STATIC)
+add_library(${PROJECT_NAME} INTERFACE)
 
-target_sources(${PROJECT_NAME}
-    PRIVATE
-    src/barrel.cc
-)
+target_include_directories(
+    ${PROJECT_NAME}
+    INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
-include(GNUInstallDirs)
-
-target_include_directories(${PROJECT_NAME}
-    PRIVATE
-
-    # internal headers; looked up by barrel iteself
-    ${CMAKE_CURRENT_SOURCE_DIR}/src
-
-    PUBLIC
-
-    # public headers; looked up by a parent project
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-
-    # public headers; looked up by any external projects
-    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
-)
-
-# TODO: Add better controls to select install path
 if(DEFINED CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-    message(
-        STATUS
-        "CMAKE_INSTALL_PREFIX is not set\n"
+    message(STATUS "CMAKE_INSTALL_PREFIX is not set\n"
         "Default value: ${CMAKE_INSTALL_PREFIX}\n"
-        "Will set it to ${CMAKE_SOURCE_DIR}/install"
-    )
+        "Will set it to ${CMAKE_SOURCE_DIR}/install")
     set(CMAKE_INSTALL_PREFIX
         "${CMAKE_SOURCE_DIR}/install"
-        CACHE PATH "Where the library will be installed at" FORCE
-    )
+        CACHE PATH "Where the library will be installed at" FORCE)
 else()
-    message(
-        STATUS
-        "CMAKE_INSTALL_PREFIX was already set\n"
-        "Current value: ${CMAKE_INSTALL_PREFIX}"
-    )
+    message(STATUS "CMAKE_INSTALL_PREFIX was already set\n"
+        "Current value: ${CMAKE_INSTALL_PREFIX}")
 endif()
 
-set(public_headers
-    include/brew.h
-)
-
-set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER "${public_headers}")
-
-set_target_properties(${PROJECT_NAME} PROPERTIES DEBUG_POSTFIX "d")
-
-install(TARGETS ${PROJECT_NAME}
+install(
+    TARGETS ${PROJECT_NAME}
     EXPORT "${PROJECT_NAME}Targets"
 
-    PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}
-    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-)
+    # RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    # LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    # ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    INCLUDES
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
-install(EXPORT "${PROJECT_NAME}Targets"
-    FILE "${PROJECT_NAME}Targets.cmake"
-    NAMESPACE ${namespace}::
-    DESTINATION cmake
-)
-
-include(CMakePackageConfigHelpers)
+install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME})
 
 write_basic_package_version_file(
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
-    VERSION "${version}"
-    COMPATIBILITY AnyNewerVersion
-)
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY AnyNewerVersion)
 
-configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/Config.cmake.in
+configure_package_config_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/Config.cmake.in
     "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
-    INSTALL_DESTINATION cmake
-)
+    INSTALL_DESTINATION cmake)
 
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
-    DESTINATION cmake
-)
-
-export(EXPORT "${PROJECT_NAME}Targets"
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Targets.cmake"
+install(
+    EXPORT "${PROJECT_NAME}Targets"
+    FILE "${PROJECT_NAME}Targets.cmake"
     NAMESPACE ${namespace}::
-)
+    DESTINATION cmake)
 
-# TODO: Add a clean target
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
+    DESTINATION cmake)
+
+# export(EXPORT "${PROJECT_NAME}Targets" FILE
+# "${CMAKE_CURRENT_BINARY_DIR}/cmake/${PROJECT_NAME}Targets.cmake" NAMESPACE
+# ${namespace}:: )
