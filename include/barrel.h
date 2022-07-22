@@ -1,8 +1,8 @@
-#ifndef BARREL_H_
-#define BARREL_H_
+#ifndef BARREL_H__
+#define BARREL_H__
 
-#include <barrel_helpers.h>
-#include <barrel_meta.h>
+#include <meta.h>
+#include <utils.h>
 
 #include <concepts>
 #include <cstddef>
@@ -239,13 +239,19 @@ std::map<BrewCommandType::External, std::string> const BrewCommandHead::External
 // clang-format on
 
 template <EnumType E>
-
 class BrewCommand {
 private:
+    E type_;
     std::string head_;
 
 public:
-    BrewCommand(const std::string &head);
+    template <typename S = std::string, typename... Args>
+    BrewCommand(E type, S const& head, Args... args);
 };
+
+template <EnumType E>
+template <typename S, typename... Args>
+BrewCommand<E>::BrewCommand(E type, S const& head, Args... args)
+    : type_(type), head_(head){};
 
 #endif

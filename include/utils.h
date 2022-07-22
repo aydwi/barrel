@@ -1,5 +1,5 @@
-#ifndef BARREL_HELPERS_H_
-#define BARREL_HELPERS_H_
+#ifndef UTILS_H__
+#define UTILS_H__
 
 #include <concepts>
 #include <type_traits>

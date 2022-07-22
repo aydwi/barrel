@@ -1,5 +1,5 @@
-#ifndef BARREL_META_H_
-#define BARREL_META_H_
+#ifndef META_H__
+#define META_H__
 
 #include <string>
 
