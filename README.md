@@ -7,7 +7,7 @@
 
 &nbsp;
 
-`barrel` is a C++ library that provides programmatic access to the homebrew command line interface.
+`barrel` is a header-only C++ library that provides programmatic access to the homebrew command line interface.
 
 It can be used to build, for example, GUI frontends or generic wrappers around homebrew. Or it can be used to develop bespoke tooling to customize or automate homebrew-based package configuration for your CI/CD jobs. Or it can help you work with homebrew on headless systems.
 
