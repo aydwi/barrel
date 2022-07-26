@@ -1,8 +1,8 @@
 #ifndef TYPES_H__
 #define TYPES_H__
 
-#include <map>
 #include <string>
+#include <unordered_map>
 
 using namespace std::string_literals;
 
@@ -119,13 +119,13 @@ enum class BrewCommandType::External {
 // clang-format on
 
 struct BrewCommandHead {
-    static std::map<BrewCommandType::Builtin, std::string> const Builtin;
-    static std::map<BrewCommandType::BuiltinDev, std::string> const BuiltinDev;
-    static std::map<BrewCommandType::External, std::string> const External;
+    static std::unordered_map<BrewCommandType::Builtin, std::string> const Builtin;
+    static std::unordered_map<BrewCommandType::BuiltinDev, std::string> const BuiltinDev;
+    static std::unordered_map<BrewCommandType::External, std::string> const External;
 };
 
 // clang-format off
-std::map<BrewCommandType::Builtin, std::string> const BrewCommandHead::Builtin {
+std::unordered_map<BrewCommandType::Builtin, std::string> const BrewCommandHead::Builtin {
     { BrewCommandType::Builtin::CACHE,                          "--cache"s },
     { BrewCommandType::Builtin::CASKROOM,                       "--caskroom"s },
     { BrewCommandType::Builtin::CELLAR,                         "--cellar"s },
@@ -179,7 +179,7 @@ std::map<BrewCommandType::Builtin, std::string> const BrewCommandHead::Builtin {
     { BrewCommandType::Builtin::VENDOR_INSTALL,                 "vendor-install"s },
 };
 
-std::map<BrewCommandType::BuiltinDev, std::string> const BrewCommandHead::BuiltinDev {
+std::unordered_map<BrewCommandType::BuiltinDev, std::string> const BrewCommandHead::BuiltinDev {
     { BrewCommandType::BuiltinDev::AUDIT,                       "audit"s },
     { BrewCommandType::BuiltinDev::BOTTLE,                      "bottle"s },
     { BrewCommandType::BuiltinDev::BUMP,                        "bump"s },
@@ -223,11 +223,29 @@ std::map<BrewCommandType::BuiltinDev, std::string> const BrewCommandHead::Builti
     { BrewCommandType::BuiltinDev::VENDOR_GEMS,                 "vendor-gems"s },
 };
 
-std::map<BrewCommandType::External, std::string> const BrewCommandHead::External {
+std::unordered_map<BrewCommandType::External, std::string> const BrewCommandHead::External {
     { BrewCommandType::External::ASPELL_DICTIONARIES,           "aspell-dictionaries"s },
     { BrewCommandType::External::DETERMINE_REBOTTLE_RUNNERS,    "determine-rebottle-runners"s },
     { BrewCommandType::External::POSTGRESQL_UPGRADE_DATABASE,   "postgresql-upgrade-database"s },
 };
 // clang-format on
+
+template <typename T>
+inline auto getBrewCommandHeadString(T key) {}
+
+template <>
+inline auto getBrewCommandHeadString<BrewCommandType::Builtin>(BrewCommandType::Builtin key) {
+    return BrewCommandHead::Builtin.at(key);
+}
+
+template <>
+inline auto getBrewCommandHeadString<BrewCommandType::BuiltinDev>(BrewCommandType::BuiltinDev key) {
+    return BrewCommandHead::BuiltinDev.at(key);
+}
+
+template <>
+inline auto getBrewCommandHeadString<BrewCommandType::External>(BrewCommandType::External key) {
+    return BrewCommandHead::External.at(key);
+}
 
 #endif
