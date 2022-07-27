@@ -235,7 +235,7 @@ inline auto getBrewCommandHead(T key) {}
 
 template <>
 inline auto getBrewCommandHead<BrewCommandType::Builtin>(BrewCommandType::Builtin key) {
-    return BrewCommandHead::Builtin.at(key);
+    return BrewCommandHead::Builtin.at(key); // TIP::TYPES_H__001
 }
 
 template <>
