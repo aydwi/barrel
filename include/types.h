@@ -231,20 +231,20 @@ std::unordered_map<BrewCommandType::External, std::string> const BrewCommandHead
 // clang-format on
 
 template <typename T>
-inline auto getBrewCommandHeadString(T key) {}
+inline auto getBrewCommandHead(T key) {}
 
 template <>
-inline auto getBrewCommandHeadString<BrewCommandType::Builtin>(BrewCommandType::Builtin key) {
+inline auto getBrewCommandHead<BrewCommandType::Builtin>(BrewCommandType::Builtin key) {
     return BrewCommandHead::Builtin.at(key);
 }
 
 template <>
-inline auto getBrewCommandHeadString<BrewCommandType::BuiltinDev>(BrewCommandType::BuiltinDev key) {
+inline auto getBrewCommandHead<BrewCommandType::BuiltinDev>(BrewCommandType::BuiltinDev key) {
     return BrewCommandHead::BuiltinDev.at(key);
 }
 
 template <>
-inline auto getBrewCommandHeadString<BrewCommandType::External>(BrewCommandType::External key) {
+inline auto getBrewCommandHead<BrewCommandType::External>(BrewCommandType::External key) {
     return BrewCommandHead::External.at(key);
 }
 
