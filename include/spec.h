@@ -3,10 +3,12 @@
 
 #include <string>
 
+namespace BrewSpec {
+inline extern std::string const _brew_default_alias{"brew"};
+inline extern std::string const _brew_default_path{"/usr/local/bin/brew"};
+} // namespace BrewSpec
+
 namespace BarrelSpec {
-//
-// The latest compatible version of Homebrew with this release
-//
 inline extern std::string const _brew_version{"Homebrew 3.5.4"};
 } // namespace BarrelSpec
 
