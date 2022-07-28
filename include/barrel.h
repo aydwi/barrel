@@ -1,6 +1,26 @@
+/*!
+ * This file is part of Barrel, a header-only C++ library that provides
+ * programmatic access to the Homebrew command line interface.
+ *
+ * Copyright (C) 2022 aydwi <contact@aydwi.com>
+ *
+ * Barrel is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option) any later
+ * version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #ifndef BARREL_H__
 #define BARREL_H__
 
+#include "command.h"
 #include "spec.h"
 #include "types.h"
 #include "utils.h"
@@ -24,14 +44,14 @@ public:
     explicit Brew(std::string const);
 
 public:
-    std::string const& getInstallPath() const; // TIP::BARREL_H__001
+    std::string const& getInstallPath() const; // CUE::BARREL_H__001
     std::string const& getInstallVersion() const;
     bool getInstallStatus() const;
 };
 
-Brew::Brew(std::string const install_path) : install_path_(install_path){/*do logic*/};
+Brew::Brew(std::string const install_path) : install_path_(install_path){};
 
-Brew::Brew() : Brew{BrewSpec::_brew_default_path} {}; // TIP::BARREL_H__002
+Brew::Brew() : Brew{BrewSpec::_brew_default_path} {}; // CUE::BARREL_H__002
 
 bool Brew::getInstallStatus() const {
     return is_installed_;
