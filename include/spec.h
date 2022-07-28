@@ -22,13 +22,16 @@
 
 #include <string>
 
+using namespace std::string_literals;
+
 namespace BrewSpec {
-inline extern std::string const _brew_default_alias{"brew"};
-inline extern std::string const _brew_default_path{"/usr/local/bin/brew"};
+inline extern std::string const _BREW_DEFAULT_ALIAS{"brew"s};
+inline extern std::string const _BREW_DEFAULT_PATH_X86_64{"/usr/local/bin/brew"s};
+inline extern std::string const _BREW_DEFAULT_PATH_ARM64{"/opt/homebrew/bin/brew"s};
 } // namespace BrewSpec
 
 namespace BarrelSpec {
-inline extern std::string const _brew_version{"Homebrew 3.5.4"};
+inline extern std::string const _BREW_VERSION{"Homebrew 3.5.4"s};
 } // namespace BarrelSpec
 
 #endif

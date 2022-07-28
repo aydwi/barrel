@@ -20,11 +20,12 @@
 #ifndef BARREL_H__
 #define BARREL_H__
 
-#include "command.h"
+#include "proc.h"
 #include "spec.h"
 #include "types.h"
 #include "utils.h"
 
+#include <algorithm>
 #include <cstddef>
 #include <cstdint>
 #include <queue>
@@ -33,29 +34,61 @@ using namespace std::string_literals;
 
 class Brew {
 private:
-    inline static std::string spec_version_{BarrelSpec::_brew_version};
-
+    BrewTargetArch target_arch_;
     std::string install_path_;
     std::string install_version_;
-    bool is_installed_;
+
+private:
+    void validateBrewInstallation();
+
+public:
+    inline static bool is_installed{false};
+    inline static bool skip_validation{false};
+    inline static std::string const spec_version{BarrelSpec::_BREW_VERSION};
 
 public:
     explicit Brew();
+    explicit Brew(BrewTargetArch);
     explicit Brew(std::string const);
+    explicit Brew(BrewTargetArch, std::string const);
 
 public:
     std::string const& getInstallPath() const; // CUE::BARREL_H__001
     std::string const& getInstallVersion() const;
-    bool getInstallStatus() const;
 };
 
-Brew::Brew(std::string const install_path) : install_path_(install_path){};
+void Brew::validateBrewInstallation() {
+    std::string const check_path =
+        install_path_ + LE_SPACER + getBrewCommandHead(BrewCommandType::Builtin::VERSION);
 
-Brew::Brew() : Brew{BrewSpec::_brew_default_path} {}; // CUE::BARREL_H__002
+    BarrelCmd::Proc proc(check_path, BarrelCmd::Stream::STDOUT_STDERR);
+    proc.execute();
 
-bool Brew::getInstallStatus() const {
-    return is_installed_;
+    if (proc.getExitCode() == EXIT_SUCCESS) {
+        Brew::is_installed = true;
+        std::string const dump = proc.getStreamDump();
+        install_version_ = {dump.begin(), std::find(dump.begin(), dump.end(), '\n')};
+    } else {
+        throw std::runtime_error(
+            "Brew::validateBrewInstallation(): Homebrew installation failed to validate!");
+    }
 }
+
+Brew::Brew(BrewTargetArch target_arch, std::string const install_path)
+    : target_arch_(target_arch), install_path_(install_path) {
+    if (Brew::skip_validation)
+        return;
+    validateBrewInstallation();
+};
+
+Brew::Brew(std::string const install_path) : Brew{BrewTargetArch::X86_64, install_path} {};
+
+Brew::Brew(BrewTargetArch target_arch)
+    : Brew{target_arch, target_arch == BrewTargetArch::X86_64 ? BrewSpec::_BREW_DEFAULT_PATH_X86_64
+                                                              : BrewSpec::_BREW_DEFAULT_PATH_ARM64} {};
+
+Brew::Brew() : Brew{BrewTargetArch::X86_64, BrewSpec::_BREW_DEFAULT_PATH_X86_64} {}; // CUE::BARREL_H__002
+
 std::string const& Brew::getInstallPath() const {
     return install_path_;
 }
