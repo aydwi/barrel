@@ -25,6 +25,11 @@
 
 using namespace std::string_literals;
 
+enum class BrewTargetArch {
+    x86_64,
+    arm64,
+};
+
 namespace BrewCommandType {
 enum class Builtin;
 enum class BuiltinDev;

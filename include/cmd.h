@@ -17,8 +17,8 @@
  * this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef COMMAND_H__
-#define COMMAND_H__
+#ifndef CMD_H__
+#define CMD_H__
 
 #include <array>
 #include <ostream>

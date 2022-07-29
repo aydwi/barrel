@@ -20,7 +20,7 @@
 #ifndef BARREL_H__
 #define BARREL_H__
 
-#include "command.h"
+#include "cmd.h"
 #include "spec.h"
 #include "types.h"
 #include "utils.h"
@@ -33,7 +33,9 @@ using namespace std::string_literals;
 
 class Brew {
 private:
-    inline static std::string spec_version_{BarrelSpec::_brew_version};
+    inline static std::string spec_version_{BarrelSpec::_BREW_VERSION};
+
+    BrewTargetArch target_arch_;
 
     std::string install_path_;
     std::string install_version_;
@@ -41,7 +43,9 @@ private:
 
 public:
     explicit Brew();
+    explicit Brew(BrewTargetArch);
     explicit Brew(std::string const);
+    explicit Brew(BrewTargetArch, std::string const);
 
 public:
     std::string const& getInstallPath() const; // CUE::BARREL_H__001
@@ -49,9 +53,17 @@ public:
     bool getInstallStatus() const;
 };
 
-Brew::Brew(std::string const install_path) : install_path_(install_path){};
+Brew::Brew(BrewTargetArch target_arch, std::string const install_path)
+    : target_arch_(target_arch),
+      install_path_(install_path){/* validate path, set version and is-installed */};
 
-Brew::Brew() : Brew{BrewSpec::_brew_default_path} {}; // CUE::BARREL_H__002
+Brew::Brew(std::string const install_path) : Brew{BrewTargetArch::x86_64, install_path} {};
+
+Brew::Brew(BrewTargetArch target_arch)
+    : Brew{target_arch, target_arch == BrewTargetArch::x86_64 ? BrewSpec::_BREW_DEFAULT_PATH_X86_64
+                                                              : BrewSpec::_BREW_DEFAULT_PATH_ARM64} {};
+
+Brew::Brew() : Brew{BrewTargetArch::x86_64, BrewSpec::_BREW_DEFAULT_PATH_X86_64} {};
 
 bool Brew::getInstallStatus() const {
     return is_installed_;
