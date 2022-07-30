@@ -20,7 +20,7 @@
 #ifndef BARREL_H__
 #define BARREL_H__
 
-#include "cmd.h"
+#include "proc.h"
 #include "spec.h"
 #include "types.h"
 #include "utils.h"
