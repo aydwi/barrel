@@ -26,8 +26,8 @@
 using namespace std::string_literals;
 
 enum class BrewTargetArch {
-    x86_64,
-    arm64,
+    X86_64,
+    ARM64,
 };
 
 namespace BrewCommandType {

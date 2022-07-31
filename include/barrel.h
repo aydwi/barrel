@@ -33,13 +33,17 @@ using namespace std::string_literals;
 
 class Brew {
 private:
-    inline static std::string spec_version_{BarrelSpec::_BREW_VERSION};
-
     BrewTargetArch target_arch_;
-
     std::string install_path_;
     std::string install_version_;
     bool is_installed_;
+
+private:
+    void validateBrewInstallation();
+
+public:
+    inline static bool skip_validation{false};
+    inline static std::string const spec_version{BarrelSpec::_BREW_VERSION};
 
 public:
     explicit Brew();
@@ -53,17 +57,39 @@ public:
     bool getInstallStatus() const;
 };
 
-Brew::Brew(BrewTargetArch target_arch, std::string const install_path)
-    : target_arch_(target_arch),
-      install_path_(install_path){/* validate path, set version and is-installed */};
+void Brew::validateBrewInstallation() {
+    std::string const check_path =
+        install_path_ + LE_SPACER + getBrewCommandHead(BrewCommandType::Builtin::VERSION);
 
-Brew::Brew(std::string const install_path) : Brew{BrewTargetArch::x86_64, install_path} {};
+    BarrelCmd::Proc proc(check_path, BarrelCmd::Stream::STDOUT_STDERR);
+    proc.execute();
+
+    if (proc.getExitCode() == EXIT_SUCCESS) {
+        is_installed_ = true;
+        std::string const streamDump = proc.getStreamDump();
+        install_version_ = {streamDump.begin(), std::find(streamDump.begin(), streamDump.end(), '\n')};
+    } else {
+        throw std::runtime_error(
+            "Brew::validateBrewInstallation(): Homebrew installation failed to validate!");
+    }
+}
+
+Brew::Brew(BrewTargetArch target_arch, std::string const install_path)
+    : target_arch_(target_arch), install_path_(install_path) {
+    if (Brew::skip_validation) {
+        is_installed_ = false;
+        return;
+    }
+    validateBrewInstallation();
+};
+
+Brew::Brew(std::string const install_path) : Brew{BrewTargetArch::X86_64, install_path} {};
 
 Brew::Brew(BrewTargetArch target_arch)
-    : Brew{target_arch, target_arch == BrewTargetArch::x86_64 ? BrewSpec::_BREW_DEFAULT_PATH_X86_64
+    : Brew{target_arch, target_arch == BrewTargetArch::X86_64 ? BrewSpec::_BREW_DEFAULT_PATH_X86_64
                                                               : BrewSpec::_BREW_DEFAULT_PATH_ARM64} {};
 
-Brew::Brew() : Brew{BrewTargetArch::x86_64, BrewSpec::_BREW_DEFAULT_PATH_X86_64} {};
+Brew::Brew() : Brew{BrewTargetArch::X86_64, BrewSpec::_BREW_DEFAULT_PATH_X86_64} {}; // CUE::BARREL_H__002
 
 bool Brew::getInstallStatus() const {
     return is_installed_;
