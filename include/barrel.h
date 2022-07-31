@@ -36,12 +36,12 @@ private:
     BrewTargetArch target_arch_;
     std::string install_path_;
     std::string install_version_;
-    bool is_installed_;
 
 private:
     void validateBrewInstallation();
 
 public:
+    inline static bool is_installed{false};
     inline static bool skip_validation{false};
     inline static std::string const spec_version{BarrelSpec::_BREW_VERSION};
 
@@ -54,7 +54,6 @@ public:
 public:
     std::string const& getInstallPath() const; // CUE::BARREL_H__001
     std::string const& getInstallVersion() const;
-    bool getInstallStatus() const;
 };
 
 void Brew::validateBrewInstallation() {
@@ -65,7 +64,7 @@ void Brew::validateBrewInstallation() {
     proc.execute();
 
     if (proc.getExitCode() == EXIT_SUCCESS) {
-        is_installed_ = true;
+        Brew::is_installed = true;
         std::string const streamDump = proc.getStreamDump();
         install_version_ = {streamDump.begin(), std::find(streamDump.begin(), streamDump.end(), '\n')};
     } else {
@@ -76,10 +75,8 @@ void Brew::validateBrewInstallation() {
 
 Brew::Brew(BrewTargetArch target_arch, std::string const install_path)
     : target_arch_(target_arch), install_path_(install_path) {
-    if (Brew::skip_validation) {
-        is_installed_ = false;
+    if (Brew::skip_validation)
         return;
-    }
     validateBrewInstallation();
 };
 
@@ -91,9 +88,6 @@ Brew::Brew(BrewTargetArch target_arch)
 
 Brew::Brew() : Brew{BrewTargetArch::X86_64, BrewSpec::_BREW_DEFAULT_PATH_X86_64} {}; // CUE::BARREL_H__002
 
-bool Brew::getInstallStatus() const {
-    return is_installed_;
-}
 std::string const& Brew::getInstallPath() const {
     return install_path_;
 }
