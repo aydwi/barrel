@@ -27,58 +27,92 @@
 #include <stdexcept>
 #include <string>
 
+using namespace std::string_literals;
+
 inline extern std::size_t const READ_BUFFER_SZ{1024};
 
-class SpawnProc {
+inline extern std::string const STDOUT_CAPTURE{"2>/dev/null"s};
+inline extern std::string const STDERR_CAPTURE{"2>&1 1>/dev/null"s};
+inline extern std::string const STDOUT_STDERR_CAPTURE{"2>&1"s};
+
+inline extern std::string const LE_SPACER{" "s};
+
+namespace BarrelCmd {
+
+enum class Stream {
+    STDOUT,
+    STDERR,
+    STDOUT_STDERR,
+};
+
+class Proc {
 private:
     std::string const cmd_;
+    Stream stream_;
 
-    std::string stdout_dump_{};
-    std::string stderr_dump_{};
+    std::string stream_dump_{};
     int exit_status_{EXIT_SUCCESS};
 
 public:
-    explicit SpawnProc(std::string const&);
+    explicit Proc(std::string const&);
+    explicit Proc(std::string const&, Stream);
 
 public:
-    std::string const& getStdoutDump() const;
-    std::string const& getStderrDump() const;
+    std::string const& getStreamDump() const;
     int getExitCode() const;
 
 public:
-    void readStreamData();
+    void execute();
 };
 
-SpawnProc::SpawnProc(std::string const& cmd) : cmd_(cmd){};
+Proc::Proc(std::string const& cmd, Stream stream) : cmd_(cmd), stream_(stream){};
 
-std::string const& SpawnProc::getStdoutDump() const {
-    return stdout_dump_;
+Proc::Proc(std::string const& cmd) : Proc{cmd, Stream::STDOUT} {};
+
+std::string const& Proc::getStreamDump() const {
+    return stream_dump_;
 }
 
-std::string const& SpawnProc::getStderrDump() const {
-    return stderr_dump_;
-}
-
-int SpawnProc::getExitCode() const {
+int Proc::getExitCode() const {
     return WEXITSTATUS(exit_status_);
 }
 
-void SpawnProc::readStreamData() {
+void Proc::execute() {
     const char* MODE = "r";
     std::array<char, READ_BUFFER_SZ> read_buffer;
 
+    std::string capture;
+
+    switch (stream_) {
+    case Stream::STDOUT:
+        capture = STDOUT_CAPTURE;
+        break;
+    case Stream::STDERR:
+        capture = STDERR_CAPTURE;
+        break;
+    case Stream::STDOUT_STDERR:
+        capture = STDOUT_STDERR_CAPTURE;
+        break;
+    default:
+        break;
+    }
+
+    std::string const cmd = cmd_ + LE_SPACER + capture;
+
     auto fptr_del = [&exit_status_ = exit_status_](FILE* file) { exit_status_ = pclose(file); };
-    std::unique_ptr<FILE, decltype(fptr_del)> file(popen(cmd_.c_str(), MODE), fptr_del);
+    std::unique_ptr<FILE, decltype(fptr_del)> file(popen(cmd.c_str(), MODE), fptr_del);
 
     if (file == nullptr) {
-        throw std::runtime_error("SpawnProc::readStreamData(): popen() failed to initialize");
+        throw std::runtime_error("Proc::execute(): popen() failed to initialize");
     }
 
     std::size_t read_bytes;
     while ((read_bytes = std::fread(read_buffer.data(), sizeof(read_buffer.at(0)), sizeof(read_buffer),
                                     file.get())) != 0) {
-        stdout_dump_ += std::string(read_buffer.data(), read_bytes);
+        stream_dump_ += std::string(read_buffer.data(), read_bytes);
     }
 }
+
+} // namespace BarrelCmd
 
 #endif
