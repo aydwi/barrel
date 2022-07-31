@@ -41,3 +41,4 @@ install/*
 .DS_Store
 .vscode
 .idea
+.github
