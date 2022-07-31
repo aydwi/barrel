@@ -37,6 +37,9 @@ build/*
 # Install
 install/*
 
+# HTML Docs
+docs/html/*
+
 # Other
 .DS_Store
 .vscode

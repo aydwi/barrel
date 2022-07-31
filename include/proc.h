@@ -17,6 +17,11 @@
  * this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*! \file  proc.h
+    \brief An internal header used by Barrel. Provides process execution functionality
+           to the library.
+*/
+
 #ifndef PROC_H__
 #define PROC_H__
 

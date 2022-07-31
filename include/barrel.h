@@ -17,6 +17,11 @@
  * this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*! \file  barrel.h
+ *  \brief The primary header exposed by Barrel. Provides the entire core functionality
+ *         the library.
+ */
+
 #ifndef BARREL_H__
 #define BARREL_H__
 
@@ -32,6 +37,9 @@
 
 using namespace std::string_literals;
 
+/*! \brief Set up a Homebrew execution environment.
+ *         Further, customize and validate the execution environment.
+ */
 class Brew {
 private:
     BrewTargetArch target_arch_;
@@ -47,9 +55,44 @@ public:
     inline static std::string const spec_version{BarrelSpec::_BREW_VERSION};
 
 public:
+    /*! \brief Default constructor for Brew. Roll the spartan way.
+     *
+     *  The simplest way to construct a Brew object. Barrel defaults the
+     *  target architecture to BrewTargetArch::X86_64 and correspondingly
+     *  the Homebrew installation path to BrewSpec::_BREW_DEFAULT_PATH_X86_64.
+     *
+     *  \sa BrewSpec
+     */
     explicit Brew();
+
+    /*! \brief A constructor for Brew, which allows you to specify your target
+     *         architecture. Homebrew installation path is set to the default
+     *         path for this architecture.
+     *
+     *  \param target_arch Target architecture
+     *
+     *  \sa BrewSpec
+     */
     explicit Brew(BrewTargetArch);
+
+    /*! \brief A constructor for Brew, which allows you to specify a custom
+     *         location for your Homebrew installation, specifically the `brew`
+     *         binary. Barrel defaults the target architecture to BrewTargetArch::X86_64.
+     *
+     *  \param install_path Custom `brew` installation path
+     *
+     *  \sa BrewSpec
+     */
     explicit Brew(std::string const);
+
+    /*! \brief A constructor for Brew, which allows you to specify both your target
+     *         architecture and a custom path for your Homebrew installation.
+     *
+     *  \param target_arch Target architecture
+     *  \param install_path Custom `brew` installation path
+     *
+     *  \sa BrewSpec
+     */
     explicit Brew(BrewTargetArch, std::string const);
 
 public:
@@ -96,6 +139,9 @@ std::string const& Brew::getInstallVersion() const {
     return install_version_;
 }
 
+/*! \brief Work with Homebrew commands in your program.
+ *         Set up, execute and retrieve the results of commands.
+ */
 template <EnumType E>
 class BrewCommand : public Brew {
 private:

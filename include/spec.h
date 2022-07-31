@@ -17,6 +17,10 @@
  * this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*! \file  spec.h
+    \brief An internal header used by Barrel. Maintains global specifications.
+*/
+
 #ifndef SPEC_H__
 #define SPEC_H__
 
@@ -24,14 +28,22 @@
 
 using namespace std::string_literals;
 
+// clang-format off
+
+/*! \brief Homebrew related specifications.
+ */
 namespace BrewSpec {
 inline extern std::string const _BREW_DEFAULT_ALIAS{"brew"s};
-inline extern std::string const _BREW_DEFAULT_PATH_X86_64{"/usr/local/bin/brew"s};
-inline extern std::string const _BREW_DEFAULT_PATH_ARM64{"/opt/homebrew/bin/brew"s};
+inline extern std::string const _BREW_DEFAULT_PATH_X86_64{"/usr/local/bin/brew"s};   /*!< Default install path of Homebrew on X86_64 */
+inline extern std::string const _BREW_DEFAULT_PATH_ARM64{"/opt/homebrew/bin/brew"s}; /*!< Default install path of Homebrew on ARM64 */
 } // namespace BrewSpec
 
+/*! \brief Barrel related specifications.
+ */
 namespace BarrelSpec {
-inline extern std::string const _BREW_VERSION{"Homebrew 3.5.4"s};
+inline extern std::string const _BREW_VERSION{"Homebrew 3.5.4"s}; /*!< Latest Homebrew version which Barrel API targets/supports */
 } // namespace BarrelSpec
+
+// clang-format on
 
 #endif
