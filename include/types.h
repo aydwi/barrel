@@ -17,26 +17,38 @@
  * this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*! \file  types.h
+    \brief An internal header used by Barrel. Maintains core types used by the
+           library.
+*/
+
 #ifndef TYPES_H__
 #define TYPES_H__
 
 #include <string>
 #include <unordered_map>
 
-using namespace std::string_literals;
+using namespace std::string_literals; // TYPES_H__001
 
+/*! \brief Enumeration of target machine architectures.
+ */
 enum class BrewTargetArch {
-    X86_64,
-    ARM64,
+    X86_64, /*!< 64 bit Intel environment */
+    ARM64,  /*!< 64 bit ARM environment */
 };
 
+/*! \brief Collection of different categories of commands Homebrew defines.
+ */
 namespace BrewCommandType {
-enum class Builtin;
-enum class BuiltinDev;
-enum class External;
-}; // namespace BrewCommandType
+enum class Builtin;    /*!< "Built-in" command type */
+enum class BuiltinDev; /*!< "Built-in developer" command type */
+enum class External;   /*!< "External" command type */
+};                     // namespace BrewCommandType
 
 // clang-format off
+
+/*! \brief Enumeration of built-in commands.
+ */
 enum class BrewCommandType::Builtin {
     CACHE = 0x1,
     CASKROOM,
@@ -91,6 +103,8 @@ enum class BrewCommandType::Builtin {
     VENDOR_INSTALL,
 };
 
+/*! \brief Enumeration of built-in developer commands.
+ */
 enum class BrewCommandType::BuiltinDev {
     AUDIT = 0x1,
     BOTTLE,
@@ -135,13 +149,22 @@ enum class BrewCommandType::BuiltinDev {
     VENDOR_GEMS,
 };
 
+/*! \brief Enumeration of external commands.
+ */
 enum class BrewCommandType::External {
     ASPELL_DICTIONARIES = 0x1,
     DETERMINE_REBOTTLE_RUNNERS,
     POSTGRESQL_UPGRADE_DATABASE,
 };
+
 // clang-format on
 
+/*! \brief A (namespace-like) type that declares mappings of Homebrew commands
+ *         to command "heads".
+ *
+ * A command "head" is string representation of the first word of a Homebrew command.
+ * For example, in `brew --cache`, `"--cache"` is the command head.
+ */
 struct BrewCommandHead {
     static std::unordered_map<BrewCommandType::Builtin, std::string> const Builtin;
     static std::unordered_map<BrewCommandType::BuiltinDev, std::string> const BuiltinDev;
@@ -149,6 +172,10 @@ struct BrewCommandHead {
 };
 
 // clang-format off
+
+/*! \brief Mapping of built-in commands to their respective command heads.
+ *         \sa BrewCommandType::Builtin, BrewCommandHead
+ */
 std::unordered_map<BrewCommandType::Builtin, std::string> const BrewCommandHead::Builtin {
     { BrewCommandType::Builtin::CACHE,                          "--cache"s },
     { BrewCommandType::Builtin::CASKROOM,                       "--caskroom"s },
@@ -203,6 +230,9 @@ std::unordered_map<BrewCommandType::Builtin, std::string> const BrewCommandHead:
     { BrewCommandType::Builtin::VENDOR_INSTALL,                 "vendor-install"s },
 };
 
+/*! \brief Mapping of built-in developer commands to their respective command heads.
+ *         \sa BrewCommandType::BuiltinDev, BrewCommandHead
+ */
 std::unordered_map<BrewCommandType::BuiltinDev, std::string> const BrewCommandHead::BuiltinDev {
     { BrewCommandType::BuiltinDev::AUDIT,                       "audit"s },
     { BrewCommandType::BuiltinDev::BOTTLE,                      "bottle"s },
@@ -247,29 +277,33 @@ std::unordered_map<BrewCommandType::BuiltinDev, std::string> const BrewCommandHe
     { BrewCommandType::BuiltinDev::VENDOR_GEMS,                 "vendor-gems"s },
 };
 
+/*! \brief Mapping of external commands to their respective command heads.
+ *         \sa BrewCommandType::External, BrewCommandHead
+ */
 std::unordered_map<BrewCommandType::External, std::string> const BrewCommandHead::External {
     { BrewCommandType::External::ASPELL_DICTIONARIES,           "aspell-dictionaries"s },
     { BrewCommandType::External::DETERMINE_REBOTTLE_RUNNERS,    "determine-rebottle-runners"s },
     { BrewCommandType::External::POSTGRESQL_UPGRADE_DATABASE,   "postgresql-upgrade-database"s },
 };
+
 // clang-format on
 
 template <typename T>
-inline auto getBrewCommandHead(T key) {
+inline auto getCommandHead(T key) {
 }
 
 template <>
-inline auto getBrewCommandHead<BrewCommandType::Builtin>(BrewCommandType::Builtin key) {
+inline auto getCommandHead<BrewCommandType::Builtin>(BrewCommandType::Builtin key) {
     return BrewCommandHead::Builtin.at(key);
 }
 
 template <>
-inline auto getBrewCommandHead<BrewCommandType::BuiltinDev>(BrewCommandType::BuiltinDev key) {
+inline auto getCommandHead<BrewCommandType::BuiltinDev>(BrewCommandType::BuiltinDev key) {
     return BrewCommandHead::BuiltinDev.at(key);
 }
 
 template <>
-inline auto getBrewCommandHead<BrewCommandType::External>(BrewCommandType::External key) {
+inline auto getCommandHead<BrewCommandType::External>(BrewCommandType::External key) {
     return BrewCommandHead::External.at(key);
 }
 

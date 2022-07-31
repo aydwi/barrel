@@ -17,6 +17,11 @@
  * this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
+/*! \file  proc.h
+    \brief An internal header used by Barrel. Provides process execution functionality
+           to the library.
+*/
+
 #ifndef PROC_H__
 #define PROC_H__
 
@@ -50,12 +55,13 @@ private:
     std::string const cmd_;
     Stream stream_;
 
+private:
     std::string stream_dump_{};
-    int exit_code_{EXIT_SUCCESS};
+    int exit_code_;
 
 public:
     explicit Proc(std::string const&);
-    explicit Proc(std::string const&, Stream);
+    Proc(std::string const&, Stream);
 
 public:
     std::string const& getStreamDump() const;
@@ -99,7 +105,7 @@ void Proc::execute() {
 
     std::string const cmd = cmd_ + LE_SPACER + capture;
 
-    auto fptr_del = [&exit_code_ = exit_code_](FILE* file) { exit_code_ = pclose(file); };
+    auto fptr_del = [&exit_code_ = exit_code_](FILE* file) { exit_code_ = pclose(file); }; // PROC_H__001
     std::unique_ptr<FILE, decltype(fptr_del)> file(popen(cmd.c_str(), MODE), fptr_del);
 
     if (file == nullptr) {
