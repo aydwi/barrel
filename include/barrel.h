@@ -25,6 +25,7 @@
 #include "types.h"
 #include "utils.h"
 
+#include <algorithm>
 #include <cstddef>
 #include <cstdint>
 #include <queue>
@@ -65,8 +66,8 @@ void Brew::validateBrewInstallation() {
 
     if (proc.getExitCode() == EXIT_SUCCESS) {
         Brew::is_installed = true;
-        std::string const streamDump = proc.getStreamDump();
-        install_version_ = {streamDump.begin(), std::find(streamDump.begin(), streamDump.end(), '\n')};
+        std::string const dump = proc.getStreamDump();
+        install_version_ = {dump.begin(), std::find(dump.begin(), dump.end(), '\n')};
     } else {
         throw std::runtime_error(
             "Brew::validateBrewInstallation(): Homebrew installation failed to validate!");
