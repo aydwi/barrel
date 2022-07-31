@@ -51,7 +51,7 @@ private:
     Stream stream_;
 
     std::string stream_dump_{};
-    int exit_status_{EXIT_SUCCESS};
+    int exit_code_{EXIT_SUCCESS};
 
 public:
     explicit Proc(std::string const&);
@@ -59,7 +59,7 @@ public:
 
 public:
     std::string const& getStreamDump() const;
-    int getExitCode() const;
+    int getExitStatus() const;
 
 public:
     void execute();
@@ -73,8 +73,8 @@ std::string const& Proc::getStreamDump() const {
     return stream_dump_;
 }
 
-int Proc::getExitCode() const {
-    return WEXITSTATUS(exit_status_);
+int Proc::getExitStatus() const {
+    return WEXITSTATUS(exit_code_);
 }
 
 void Proc::execute() {
@@ -99,7 +99,7 @@ void Proc::execute() {
 
     std::string const cmd = cmd_ + LE_SPACER + capture;
 
-    auto fptr_del = [&exit_status_ = exit_status_](FILE* file) { exit_status_ = pclose(file); };
+    auto fptr_del = [&exit_code_ = exit_code_](FILE* file) { exit_code_ = pclose(file); };
     std::unique_ptr<FILE, decltype(fptr_del)> file(popen(cmd.c_str(), MODE), fptr_del);
 
     if (file == nullptr) {

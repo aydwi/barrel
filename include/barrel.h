@@ -64,7 +64,7 @@ void Brew::validateBrewInstallation() {
     BarrelCmd::Proc proc(check_path, BarrelCmd::Stream::STDOUT_STDERR);
     proc.execute();
 
-    if (proc.getExitCode() == EXIT_SUCCESS) {
+    if (proc.getExitStatus() == EXIT_SUCCESS) {
         Brew::is_installed = true;
         std::string const dump = proc.getStreamDump();
         install_version_ = {dump.begin(), std::find(dump.begin(), dump.end(), '\n')};
