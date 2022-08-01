@@ -97,256 +97,270 @@ $(document).ready(function(){initNavTree('types_8h_source.html',''); initResizab
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">using namespace </span>std::string_literals;</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">enum class</span> BrewTargetArch {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    X86_64,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    ARM64,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">namespace </span>BrewCommandType {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">enum class</span> Builtin;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">enum class</span> BuiltinDev;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">enum class</span> External;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}; <span class="comment">// namespace BrewCommandType</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// clang-format off</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">enum class</span> BrewCommandType::Builtin {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    CACHE = 0x1,</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    CASKROOM,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    CELLAR,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    ENV,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    PREFIX,</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    REPOSITORY,</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    VERSION,</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    ANALYTICS,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    AUTOREMOVE,</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    CASKS,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    CLEANUP,</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    COMMANDS,</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    COMPLETIONS,</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    CONFIG,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    DEPS,</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    DESC,</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    DEVELOPER,</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    DOCTOR,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    FETCH,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    FORMULAE,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    GIST_LOGS,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    HELP,</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    HOME,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    INFO,</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    INSTALL,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    LEAVES,</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    LINK,</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    LIST,</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    LOG,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    MIGRATE,</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    MISSING,</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    OPTIONS,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    OUTDATED,</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    PIN,</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    POSTINSTALL,</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    READALL,</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    REINSTALL,</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    SEARCH,</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    SHELLENV,</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    TAP,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    TAP_INFO,</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    UNINSTALL,</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    UNLINK,</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    UNPIN,</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    UNTAP,</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    UPDATE,</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    UPDATE_REPORT,</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    UPDATE_RESET,</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    UPGRADE,</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    USES,</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    VENDOR_INSTALL,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>};</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">enum class</span> BrewCommandType::BuiltinDev {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    AUDIT = 0x1,</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    BOTTLE,</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    BUMP,</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    BUMP_CASK_PR,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    BUMP_FORMULA_PR,</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    BUMP_REVISION,</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    BUMP_UNVERSIONED_CASKS,</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    CAT,</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    COMMAND,</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    CREATE,</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    DISPATCH_BUILD_BOTTLE,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    EDIT,</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    EXTRACT,</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    FORMULA,</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    GENERATE_MAN_COMPLETIONS,</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    INSTALL_BUNDLER_GEMS,</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    IRB,</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    LINKAGE,</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    LIVECHECK,</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    PR_AUTOMERGE,</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    PR_PUBLISH,</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    PR_PULL,</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    PR_UPLOAD,</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    PROF,</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    RELEASE,</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    RUBOCOP,</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    RUBY,</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    SH,</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    SPONSORS,</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    STYLE,</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    TAP_NEW,</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    TEST,</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    TESTS,</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    TYPECHECK,</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    UNBOTTLED,</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    UNPACK,</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    UPDATE_LICENSE_DATA,</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    UPDATE_MAINTAINERS,</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    UPDATE_PYTHON_RESOURCES,</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    UPDATE_TEST,</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    VENDOR_GEMS,</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>};</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="keyword">enum class</span> BrewCommandType::External {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    ASPELL_DICTIONARIES = 0x1,</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    DETERMINE_REBOTTLE_RUNNERS,</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    POSTGRESQL_UPGRADE_DATABASE,</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>};</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment">// clang-format on</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="struct_brew_command_head.html">  150</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_brew_command_head.html">BrewCommandHead</a> {</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keyword">static</span> std::unordered_map&lt;BrewCommandType::Builtin, std::string&gt; <span class="keyword">const</span> Builtin;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">static</span> std::unordered_map&lt;BrewCommandType::BuiltinDev, std::string&gt; <span class="keyword">const</span> BuiltinDev;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">static</span> std::unordered_map&lt;BrewCommandType::External, std::string&gt; <span class="keyword">const</span> External;</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>};</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">// clang-format off</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>std::unordered_map&lt;BrewCommandType::Builtin, std::string&gt; <span class="keyword">const</span> BrewCommandHead::Builtin {</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    { BrewCommandType::Builtin::CACHE,                          <span class="stringliteral">&quot;--cache&quot;</span>s },</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    { BrewCommandType::Builtin::CASKROOM,                       <span class="stringliteral">&quot;--caskroom&quot;</span>s },</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    { BrewCommandType::Builtin::CELLAR,                         <span class="stringliteral">&quot;--cellar&quot;</span>s },</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    { BrewCommandType::Builtin::ENV,                            <span class="stringliteral">&quot;--env&quot;</span>s },</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    { BrewCommandType::Builtin::PREFIX,                         <span class="stringliteral">&quot;--prefix&quot;</span>s },</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    { BrewCommandType::Builtin::REPOSITORY,                     <span class="stringliteral">&quot;--repository&quot;</span>s },</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    { BrewCommandType::Builtin::VERSION,                        <span class="stringliteral">&quot;--version&quot;</span>s },</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    { BrewCommandType::Builtin::ANALYTICS,                      <span class="stringliteral">&quot;analytics&quot;</span>s },</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    { BrewCommandType::Builtin::AUTOREMOVE,                     <span class="stringliteral">&quot;autoremove&quot;</span>s },</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    { BrewCommandType::Builtin::CASKS,                          <span class="stringliteral">&quot;casks&quot;</span>s },</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    { BrewCommandType::Builtin::CLEANUP,                        <span class="stringliteral">&quot;cleanup&quot;</span>s },</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    { BrewCommandType::Builtin::COMMANDS,                       <span class="stringliteral">&quot;commands&quot;</span>s },</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    { BrewCommandType::Builtin::COMPLETIONS,                    <span class="stringliteral">&quot;completions&quot;</span>s },</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    { BrewCommandType::Builtin::CONFIG,                         <span class="stringliteral">&quot;config&quot;</span>s },</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    { BrewCommandType::Builtin::DEPS,                           <span class="stringliteral">&quot;deps&quot;</span>s },</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    { BrewCommandType::Builtin::DESC,                           <span class="stringliteral">&quot;desc&quot;</span>s },</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    { BrewCommandType::Builtin::DEVELOPER,                      <span class="stringliteral">&quot;developer&quot;</span>s },</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    { BrewCommandType::Builtin::DOCTOR,                         <span class="stringliteral">&quot;doctor&quot;</span>s },</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    { BrewCommandType::Builtin::FETCH,                          <span class="stringliteral">&quot;fetch&quot;</span>s },</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    { BrewCommandType::Builtin::FORMULAE,                       <span class="stringliteral">&quot;formulae&quot;</span>s },</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    { BrewCommandType::Builtin::GIST_LOGS,                      <span class="stringliteral">&quot;gist-logs&quot;</span>s },</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    { BrewCommandType::Builtin::HELP,                           <span class="stringliteral">&quot;help&quot;</span>s },</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    { BrewCommandType::Builtin::HOME,                           <span class="stringliteral">&quot;home&quot;</span>s },</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    { BrewCommandType::Builtin::INFO,                           <span class="stringliteral">&quot;info&quot;</span>s },</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    { BrewCommandType::Builtin::INSTALL,                        <span class="stringliteral">&quot;install&quot;</span>s },</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    { BrewCommandType::Builtin::LEAVES,                         <span class="stringliteral">&quot;leaves&quot;</span>s },</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    { BrewCommandType::Builtin::LINK,                           <span class="stringliteral">&quot;link&quot;</span>s },</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    { BrewCommandType::Builtin::LIST,                           <span class="stringliteral">&quot;list&quot;</span>s },</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    { BrewCommandType::Builtin::LOG,                            <span class="stringliteral">&quot;logv&quot;</span>s },</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    { BrewCommandType::Builtin::MIGRATE,                        <span class="stringliteral">&quot;migrate&quot;</span>s },</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    { BrewCommandType::Builtin::MISSING,                        <span class="stringliteral">&quot;missing&quot;</span>s },</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    { BrewCommandType::Builtin::OPTIONS,                        <span class="stringliteral">&quot;options&quot;</span>s },</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    { BrewCommandType::Builtin::OUTDATED,                       <span class="stringliteral">&quot;outdated&quot;</span>s },</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    { BrewCommandType::Builtin::PIN,                            <span class="stringliteral">&quot;pin&quot;</span>s },</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    { BrewCommandType::Builtin::POSTINSTALL,                    <span class="stringliteral">&quot;postinstall&quot;</span>s },</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    { BrewCommandType::Builtin::READALL,                        <span class="stringliteral">&quot;readall&quot;</span>s },</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    { BrewCommandType::Builtin::REINSTALL,                      <span class="stringliteral">&quot;reinstall&quot;</span>s },</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    { BrewCommandType::Builtin::SEARCH,                         <span class="stringliteral">&quot;search&quot;</span>s },</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    { BrewCommandType::Builtin::SHELLENV,                       <span class="stringliteral">&quot;shellenv&quot;</span>s },</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    { BrewCommandType::Builtin::TAP,                            <span class="stringliteral">&quot;tap&quot;</span>s },</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    { BrewCommandType::Builtin::TAP_INFO,                       <span class="stringliteral">&quot;tap-info&quot;</span>s },</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    { BrewCommandType::Builtin::UNINSTALL,                      <span class="stringliteral">&quot;uninstall&quot;</span>s },</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    { BrewCommandType::Builtin::UNLINK,                         <span class="stringliteral">&quot;unlink&quot;</span>s },</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    { BrewCommandType::Builtin::UNPIN,                          <span class="stringliteral">&quot;unpin&quot;</span>s },</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    { BrewCommandType::Builtin::UNTAP,                          <span class="stringliteral">&quot;untap&quot;</span>s },</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    { BrewCommandType::Builtin::UPDATE,                         <span class="stringliteral">&quot;update&quot;</span>s },</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    { BrewCommandType::Builtin::UPDATE_REPORT,                  <span class="stringliteral">&quot;update-report&quot;</span>s },</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    { BrewCommandType::Builtin::UPDATE_RESET,                   <span class="stringliteral">&quot;update-reset&quot;</span>s },</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    { BrewCommandType::Builtin::UPGRADE,                        <span class="stringliteral">&quot;upgrade&quot;</span>s },</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    { BrewCommandType::Builtin::USES,                           <span class="stringliteral">&quot;uses&quot;</span>s },</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    { BrewCommandType::Builtin::VENDOR_INSTALL,                 <span class="stringliteral">&quot;vendor-install&quot;</span>s },</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>};</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>std::unordered_map&lt;BrewCommandType::BuiltinDev, std::string&gt; <span class="keyword">const</span> BrewCommandHead::BuiltinDev {</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    { BrewCommandType::BuiltinDev::AUDIT,                       <span class="stringliteral">&quot;audit&quot;</span>s },</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    { BrewCommandType::BuiltinDev::BOTTLE,                      <span class="stringliteral">&quot;bottle&quot;</span>s },</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    { BrewCommandType::BuiltinDev::BUMP,                        <span class="stringliteral">&quot;bump&quot;</span>s },</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    { BrewCommandType::BuiltinDev::BUMP_CASK_PR,                <span class="stringliteral">&quot;bump-cask-pr&quot;</span>s },</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    { BrewCommandType::BuiltinDev::BUMP_FORMULA_PR,             <span class="stringliteral">&quot;bump-formula-pr&quot;</span>s },</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    { BrewCommandType::BuiltinDev::BUMP_REVISION,               <span class="stringliteral">&quot;bump-revision&quot;</span>s },</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    { BrewCommandType::BuiltinDev::BUMP_UNVERSIONED_CASKS,      <span class="stringliteral">&quot;bump-unversioned-casks&quot;</span>s },</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    { BrewCommandType::BuiltinDev::CAT,                         <span class="stringliteral">&quot;cat&quot;</span>s },</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    { BrewCommandType::BuiltinDev::COMMAND,                     <span class="stringliteral">&quot;command&quot;</span>s },</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    { BrewCommandType::BuiltinDev::CREATE,                      <span class="stringliteral">&quot;create&quot;</span>s },</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    { BrewCommandType::BuiltinDev::DISPATCH_BUILD_BOTTLE,       <span class="stringliteral">&quot;dispatch-build-bottle&quot;</span>s },</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    { BrewCommandType::BuiltinDev::EDIT,                        <span class="stringliteral">&quot;edit&quot;</span>s },</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    { BrewCommandType::BuiltinDev::EXTRACT,                     <span class="stringliteral">&quot;extract&quot;</span>s },</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    { BrewCommandType::BuiltinDev::FORMULA,                     <span class="stringliteral">&quot;formula&quot;</span>s },</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    { BrewCommandType::BuiltinDev::GENERATE_MAN_COMPLETIONS,    <span class="stringliteral">&quot;generate-man-completions&quot;</span>s },</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    { BrewCommandType::BuiltinDev::INSTALL_BUNDLER_GEMS,        <span class="stringliteral">&quot;install-bundler-gems&quot;</span>s },</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    { BrewCommandType::BuiltinDev::IRB,                         <span class="stringliteral">&quot;irb&quot;</span>s },</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    { BrewCommandType::BuiltinDev::LINKAGE,                     <span class="stringliteral">&quot;linkage&quot;</span>s },</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    { BrewCommandType::BuiltinDev::LIVECHECK,                   <span class="stringliteral">&quot;livecheck&quot;</span>s },</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    { BrewCommandType::BuiltinDev::PR_AUTOMERGE,                <span class="stringliteral">&quot;pr-automerge&quot;</span>s },</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    { BrewCommandType::BuiltinDev::PR_PUBLISH,                  <span class="stringliteral">&quot;pr-publish&quot;</span>s },</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    { BrewCommandType::BuiltinDev::PR_PULL,                     <span class="stringliteral">&quot;pr-pull&quot;</span>s },</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    { BrewCommandType::BuiltinDev::PR_UPLOAD,                   <span class="stringliteral">&quot;pr-upload&quot;</span>s },</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    { BrewCommandType::BuiltinDev::PROF,                        <span class="stringliteral">&quot;prof&quot;</span>s },</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    { BrewCommandType::BuiltinDev::RELEASE,                     <span class="stringliteral">&quot;release&quot;</span>s },</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    { BrewCommandType::BuiltinDev::RUBOCOP,                     <span class="stringliteral">&quot;rubocop&quot;</span>s },</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    { BrewCommandType::BuiltinDev::RUBY,                        <span class="stringliteral">&quot;ruby&quot;</span>s },</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    { BrewCommandType::BuiltinDev::SH,                          <span class="stringliteral">&quot;sh&quot;</span>s },</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    { BrewCommandType::BuiltinDev::SPONSORS,                    <span class="stringliteral">&quot;sponsors&quot;</span>s },</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    { BrewCommandType::BuiltinDev::STYLE,                       <span class="stringliteral">&quot;style&quot;</span>s },</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    { BrewCommandType::BuiltinDev::TAP_NEW,                     <span class="stringliteral">&quot;tap-new&quot;</span>s },</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    { BrewCommandType::BuiltinDev::TEST,                        <span class="stringliteral">&quot;test&quot;</span>s },</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    { BrewCommandType::BuiltinDev::TESTS,                       <span class="stringliteral">&quot;tests&quot;</span>s },</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    { BrewCommandType::BuiltinDev::TYPECHECK,                   <span class="stringliteral">&quot;typecheck&quot;</span>s },</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    { BrewCommandType::BuiltinDev::UNBOTTLED,                   <span class="stringliteral">&quot;unbottled&quot;</span>s },</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    { BrewCommandType::BuiltinDev::UNPACK,                      <span class="stringliteral">&quot;unpack&quot;</span>s },</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    { BrewCommandType::BuiltinDev::UPDATE_LICENSE_DATA,         <span class="stringliteral">&quot;update-license-data&quot;</span>s },</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    { BrewCommandType::BuiltinDev::UPDATE_MAINTAINERS,          <span class="stringliteral">&quot;update-maintainers&quot;</span>s },</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    { BrewCommandType::BuiltinDev::UPDATE_PYTHON_RESOURCES,     <span class="stringliteral">&quot;update-python-resources&quot;</span>s },</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    { BrewCommandType::BuiltinDev::UPDATE_TEST,                 <span class="stringliteral">&quot;update-test&quot;</span>s },</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    { BrewCommandType::BuiltinDev::VENDOR_GEMS,                 <span class="stringliteral">&quot;vendor-gems&quot;</span>s },</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>};</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>std::unordered_map&lt;BrewCommandType::External, std::string&gt; <span class="keyword">const</span> BrewCommandHead::External {</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    { BrewCommandType::External::ASPELL_DICTIONARIES,           <span class="stringliteral">&quot;aspell-dictionaries&quot;</span>s },</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    { BrewCommandType::External::DETERMINE_REBOTTLE_RUNNERS,    <span class="stringliteral">&quot;determine-rebottle-runners&quot;</span>s },</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    { BrewCommandType::External::POSTGRESQL_UPGRADE_DATABASE,   <span class="stringliteral">&quot;postgresql-upgrade-database&quot;</span>s },</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>};</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="comment">// clang-format on</span></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="keyword">inline</span> <span class="keyword">auto</span> getBrewCommandHead(T key) {</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>}</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="keyword">inline</span> <span class="keyword">auto</span> getBrewCommandHead&lt;BrewCommandType::Builtin&gt;(BrewCommandType::Builtin key) {</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="keywordflow">return</span> BrewCommandHead::Builtin.at(key);</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="keyword">inline</span> <span class="keyword">auto</span> getBrewCommandHead&lt;BrewCommandType::BuiltinDev&gt;(BrewCommandType::BuiltinDev key) {</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordflow">return</span> BrewCommandHead::BuiltinDev.at(key);</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>}</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="keyword">template</span> &lt;&gt;</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="keyword">inline</span> <span class="keyword">auto</span> getBrewCommandHead&lt;BrewCommandType::External&gt;(BrewCommandType::External key) {</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keywordflow">return</span> BrewCommandHead::External.at(key);</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>}</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astruct_brew_command_head_html"><div class="ttname"><a href="struct_brew_command_head.html">BrewCommandHead</a></div><div class="ttdef"><b>Definition:</b> types.h:150</div></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="types_8h.html#a8d87e8335c34103f7d85b601fc9ec369">   35</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="types_8h.html#a8d87e8335c34103f7d85b601fc9ec369">BrewTargetArch</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_enumvalue" href="types_8h.html#a8d87e8335c34103f7d85b601fc9ec369a840030b2e70cfe0155e29ee926dbd8ae">X86_64</a>, </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_enumvalue" href="types_8h.html#a8d87e8335c34103f7d85b601fc9ec369ab9b55c80d095761ac7757ced0fedadc4">ARM64</a>,  </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespace_brew_command_type.html">   42</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_brew_command_type.html">BrewCommandType</a> {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_brew_command_type.html#a6e5f67cb3380ca5749f92bdc53c5d9e3">Builtin</a>;    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_brew_command_type.html#a8e460d8065f61c2b9b4ac946a6f7122f">BuiltinDev</a>; </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_brew_command_type.html#a6afc601d2af463a1f124d6a42a857a44">External</a>;   </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};                     <span class="comment">// namespace BrewCommandType</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// clang-format off</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespace_brew_command_type.html#a6e5f67cb3380ca5749f92bdc53c5d9e3">   52</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_brew_command_type.html#a6e5f67cb3380ca5749f92bdc53c5d9e3">BrewCommandType::Builtin</a> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    CACHE = 0x1,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    CASKROOM,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    CELLAR,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    ENV,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    PREFIX,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    REPOSITORY,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    VERSION,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    ANALYTICS,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    AUTOREMOVE,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    CASKS,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    CLEANUP,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    COMMANDS,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    COMPLETIONS,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    CONFIG,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    DEPS,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    DESC,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    DEVELOPER,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    DOCTOR,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    FETCH,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    FORMULAE,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    GIST_LOGS,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    HELP,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    HOME,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    INFO,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    INSTALL,</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    LEAVES,</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    LINK,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    LIST,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    LOG,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    MIGRATE,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    MISSING,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    OPTIONS,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    OUTDATED,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    PIN,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    POSTINSTALL,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    READALL,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    REINSTALL,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    SEARCH,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    SHELLENV,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    TAP,</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    TAP_INFO,</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    UNINSTALL,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    UNLINK,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    UNPIN,</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    UNTAP,</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    UPDATE,</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    UPDATE_REPORT,</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    UPDATE_RESET,</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    UPGRADE,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    USES,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    VENDOR_INSTALL,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>};</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="namespace_brew_command_type.html#a8e460d8065f61c2b9b4ac946a6f7122f">  108</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_brew_command_type.html#a8e460d8065f61c2b9b4ac946a6f7122f">BrewCommandType::BuiltinDev</a> {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    AUDIT = 0x1,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    BOTTLE,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    BUMP,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    BUMP_CASK_PR,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    BUMP_FORMULA_PR,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    BUMP_REVISION,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    BUMP_UNVERSIONED_CASKS,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    CAT,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    COMMAND,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    CREATE,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    DISPATCH_BUILD_BOTTLE,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    EDIT,</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    EXTRACT,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    FORMULA,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    GENERATE_MAN_COMPLETIONS,</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    INSTALL_BUNDLER_GEMS,</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    IRB,</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    LINKAGE,</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    LIVECHECK,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    PR_AUTOMERGE,</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    PR_PUBLISH,</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    PR_PULL,</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    PR_UPLOAD,</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    PROF,</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    RELEASE,</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    RUBOCOP,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    RUBY,</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    SH,</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    SPONSORS,</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    STYLE,</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    TAP_NEW,</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    TEST,</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    TESTS,</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    TYPECHECK,</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    UNBOTTLED,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    UNPACK,</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    UPDATE_LICENSE_DATA,</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    UPDATE_MAINTAINERS,</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    UPDATE_PYTHON_RESOURCES,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    UPDATE_TEST,</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    VENDOR_GEMS,</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>};</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="namespace_brew_command_type.html#a6afc601d2af463a1f124d6a42a857a44">  154</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespace_brew_command_type.html#a6afc601d2af463a1f124d6a42a857a44">BrewCommandType::External</a> {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    ASPELL_DICTIONARIES = 0x1,</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    DETERMINE_REBOTTLE_RUNNERS,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    POSTGRESQL_UPGRADE_DATABASE,</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>};</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment">// clang-format on</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="struct_brew_command_head.html">  168</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_brew_command_head.html">BrewCommandHead</a> {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="struct_brew_command_head.html#a7aacce2f40b84dca998245867f21f98a">  169</a></span>    <span class="keyword">static</span> std::unordered_map&lt;BrewCommandType::Builtin, std::string&gt; <span class="keyword">const</span> <a class="code hl_variable" href="struct_brew_command_head.html#a7aacce2f40b84dca998245867f21f98a">Builtin</a>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="struct_brew_command_head.html#af34ae52981d676a9ad9d5ebbb12e428f">  170</a></span>    <span class="keyword">static</span> std::unordered_map&lt;BrewCommandType::BuiltinDev, std::string&gt; <span class="keyword">const</span> <a class="code hl_variable" href="struct_brew_command_head.html#af34ae52981d676a9ad9d5ebbb12e428f">BuiltinDev</a>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="struct_brew_command_head.html#a5d337ed792d1f38b4a713fd9c40b3ad2">  171</a></span>    <span class="keyword">static</span> std::unordered_map&lt;BrewCommandType::External, std::string&gt; <span class="keyword">const</span> <a class="code hl_variable" href="struct_brew_command_head.html#a5d337ed792d1f38b4a713fd9c40b3ad2">External</a>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>};</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">// clang-format off</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>std::unordered_map&lt;BrewCommandType::Builtin, std::string&gt; <span class="keyword">const</span> <a class="code hl_variable" href="struct_brew_command_head.html#a7aacce2f40b84dca998245867f21f98a">BrewCommandHead::Builtin</a> {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    { BrewCommandType::Builtin::CACHE,                          <span class="stringliteral">&quot;--cache&quot;</span>s },</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    { BrewCommandType::Builtin::CASKROOM,                       <span class="stringliteral">&quot;--caskroom&quot;</span>s },</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    { BrewCommandType::Builtin::CELLAR,                         <span class="stringliteral">&quot;--cellar&quot;</span>s },</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    { BrewCommandType::Builtin::ENV,                            <span class="stringliteral">&quot;--env&quot;</span>s },</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    { BrewCommandType::Builtin::PREFIX,                         <span class="stringliteral">&quot;--prefix&quot;</span>s },</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    { BrewCommandType::Builtin::REPOSITORY,                     <span class="stringliteral">&quot;--repository&quot;</span>s },</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    { BrewCommandType::Builtin::VERSION,                        <span class="stringliteral">&quot;--version&quot;</span>s },</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    { BrewCommandType::Builtin::ANALYTICS,                      <span class="stringliteral">&quot;analytics&quot;</span>s },</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    { BrewCommandType::Builtin::AUTOREMOVE,                     <span class="stringliteral">&quot;autoremove&quot;</span>s },</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    { BrewCommandType::Builtin::CASKS,                          <span class="stringliteral">&quot;casks&quot;</span>s },</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    { BrewCommandType::Builtin::CLEANUP,                        <span class="stringliteral">&quot;cleanup&quot;</span>s },</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    { BrewCommandType::Builtin::COMMANDS,                       <span class="stringliteral">&quot;commands&quot;</span>s },</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    { BrewCommandType::Builtin::COMPLETIONS,                    <span class="stringliteral">&quot;completions&quot;</span>s },</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    { BrewCommandType::Builtin::CONFIG,                         <span class="stringliteral">&quot;config&quot;</span>s },</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    { BrewCommandType::Builtin::DEPS,                           <span class="stringliteral">&quot;deps&quot;</span>s },</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    { BrewCommandType::Builtin::DESC,                           <span class="stringliteral">&quot;desc&quot;</span>s },</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    { BrewCommandType::Builtin::DEVELOPER,                      <span class="stringliteral">&quot;developer&quot;</span>s },</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    { BrewCommandType::Builtin::DOCTOR,                         <span class="stringliteral">&quot;doctor&quot;</span>s },</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    { BrewCommandType::Builtin::FETCH,                          <span class="stringliteral">&quot;fetch&quot;</span>s },</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    { BrewCommandType::Builtin::FORMULAE,                       <span class="stringliteral">&quot;formulae&quot;</span>s },</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    { BrewCommandType::Builtin::GIST_LOGS,                      <span class="stringliteral">&quot;gist-logs&quot;</span>s },</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    { BrewCommandType::Builtin::HELP,                           <span class="stringliteral">&quot;help&quot;</span>s },</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    { BrewCommandType::Builtin::HOME,                           <span class="stringliteral">&quot;home&quot;</span>s },</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    { BrewCommandType::Builtin::INFO,                           <span class="stringliteral">&quot;info&quot;</span>s },</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    { BrewCommandType::Builtin::INSTALL,                        <span class="stringliteral">&quot;install&quot;</span>s },</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    { BrewCommandType::Builtin::LEAVES,                         <span class="stringliteral">&quot;leaves&quot;</span>s },</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    { BrewCommandType::Builtin::LINK,                           <span class="stringliteral">&quot;link&quot;</span>s },</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    { BrewCommandType::Builtin::LIST,                           <span class="stringliteral">&quot;list&quot;</span>s },</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    { BrewCommandType::Builtin::LOG,                            <span class="stringliteral">&quot;logv&quot;</span>s },</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    { BrewCommandType::Builtin::MIGRATE,                        <span class="stringliteral">&quot;migrate&quot;</span>s },</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    { BrewCommandType::Builtin::MISSING,                        <span class="stringliteral">&quot;missing&quot;</span>s },</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    { BrewCommandType::Builtin::OPTIONS,                        <span class="stringliteral">&quot;options&quot;</span>s },</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    { BrewCommandType::Builtin::OUTDATED,                       <span class="stringliteral">&quot;outdated&quot;</span>s },</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    { BrewCommandType::Builtin::PIN,                            <span class="stringliteral">&quot;pin&quot;</span>s },</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    { BrewCommandType::Builtin::POSTINSTALL,                    <span class="stringliteral">&quot;postinstall&quot;</span>s },</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    { BrewCommandType::Builtin::READALL,                        <span class="stringliteral">&quot;readall&quot;</span>s },</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    { BrewCommandType::Builtin::REINSTALL,                      <span class="stringliteral">&quot;reinstall&quot;</span>s },</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    { BrewCommandType::Builtin::SEARCH,                         <span class="stringliteral">&quot;search&quot;</span>s },</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    { BrewCommandType::Builtin::SHELLENV,                       <span class="stringliteral">&quot;shellenv&quot;</span>s },</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    { BrewCommandType::Builtin::TAP,                            <span class="stringliteral">&quot;tap&quot;</span>s },</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    { BrewCommandType::Builtin::TAP_INFO,                       <span class="stringliteral">&quot;tap-info&quot;</span>s },</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    { BrewCommandType::Builtin::UNINSTALL,                      <span class="stringliteral">&quot;uninstall&quot;</span>s },</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    { BrewCommandType::Builtin::UNLINK,                         <span class="stringliteral">&quot;unlink&quot;</span>s },</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    { BrewCommandType::Builtin::UNPIN,                          <span class="stringliteral">&quot;unpin&quot;</span>s },</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    { BrewCommandType::Builtin::UNTAP,                          <span class="stringliteral">&quot;untap&quot;</span>s },</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    { BrewCommandType::Builtin::UPDATE,                         <span class="stringliteral">&quot;update&quot;</span>s },</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    { BrewCommandType::Builtin::UPDATE_REPORT,                  <span class="stringliteral">&quot;update-report&quot;</span>s },</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    { BrewCommandType::Builtin::UPDATE_RESET,                   <span class="stringliteral">&quot;update-reset&quot;</span>s },</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    { BrewCommandType::Builtin::UPGRADE,                        <span class="stringliteral">&quot;upgrade&quot;</span>s },</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    { BrewCommandType::Builtin::USES,                           <span class="stringliteral">&quot;uses&quot;</span>s },</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    { BrewCommandType::Builtin::VENDOR_INSTALL,                 <span class="stringliteral">&quot;vendor-install&quot;</span>s },</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>};</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>std::unordered_map&lt;BrewCommandType::BuiltinDev, std::string&gt; <span class="keyword">const</span> <a class="code hl_variable" href="struct_brew_command_head.html#af34ae52981d676a9ad9d5ebbb12e428f">BrewCommandHead::BuiltinDev</a> {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    { BrewCommandType::BuiltinDev::AUDIT,                       <span class="stringliteral">&quot;audit&quot;</span>s },</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    { BrewCommandType::BuiltinDev::BOTTLE,                      <span class="stringliteral">&quot;bottle&quot;</span>s },</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    { BrewCommandType::BuiltinDev::BUMP,                        <span class="stringliteral">&quot;bump&quot;</span>s },</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    { BrewCommandType::BuiltinDev::BUMP_CASK_PR,                <span class="stringliteral">&quot;bump-cask-pr&quot;</span>s },</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    { BrewCommandType::BuiltinDev::BUMP_FORMULA_PR,             <span class="stringliteral">&quot;bump-formula-pr&quot;</span>s },</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    { BrewCommandType::BuiltinDev::BUMP_REVISION,               <span class="stringliteral">&quot;bump-revision&quot;</span>s },</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    { BrewCommandType::BuiltinDev::BUMP_UNVERSIONED_CASKS,      <span class="stringliteral">&quot;bump-unversioned-casks&quot;</span>s },</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    { BrewCommandType::BuiltinDev::CAT,                         <span class="stringliteral">&quot;cat&quot;</span>s },</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    { BrewCommandType::BuiltinDev::COMMAND,                     <span class="stringliteral">&quot;command&quot;</span>s },</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    { BrewCommandType::BuiltinDev::CREATE,                      <span class="stringliteral">&quot;create&quot;</span>s },</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    { BrewCommandType::BuiltinDev::DISPATCH_BUILD_BOTTLE,       <span class="stringliteral">&quot;dispatch-build-bottle&quot;</span>s },</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    { BrewCommandType::BuiltinDev::EDIT,                        <span class="stringliteral">&quot;edit&quot;</span>s },</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    { BrewCommandType::BuiltinDev::EXTRACT,                     <span class="stringliteral">&quot;extract&quot;</span>s },</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    { BrewCommandType::BuiltinDev::FORMULA,                     <span class="stringliteral">&quot;formula&quot;</span>s },</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    { BrewCommandType::BuiltinDev::GENERATE_MAN_COMPLETIONS,    <span class="stringliteral">&quot;generate-man-completions&quot;</span>s },</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    { BrewCommandType::BuiltinDev::INSTALL_BUNDLER_GEMS,        <span class="stringliteral">&quot;install-bundler-gems&quot;</span>s },</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    { BrewCommandType::BuiltinDev::IRB,                         <span class="stringliteral">&quot;irb&quot;</span>s },</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    { BrewCommandType::BuiltinDev::LINKAGE,                     <span class="stringliteral">&quot;linkage&quot;</span>s },</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    { BrewCommandType::BuiltinDev::LIVECHECK,                   <span class="stringliteral">&quot;livecheck&quot;</span>s },</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    { BrewCommandType::BuiltinDev::PR_AUTOMERGE,                <span class="stringliteral">&quot;pr-automerge&quot;</span>s },</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    { BrewCommandType::BuiltinDev::PR_PUBLISH,                  <span class="stringliteral">&quot;pr-publish&quot;</span>s },</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    { BrewCommandType::BuiltinDev::PR_PULL,                     <span class="stringliteral">&quot;pr-pull&quot;</span>s },</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    { BrewCommandType::BuiltinDev::PR_UPLOAD,                   <span class="stringliteral">&quot;pr-upload&quot;</span>s },</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    { BrewCommandType::BuiltinDev::PROF,                        <span class="stringliteral">&quot;prof&quot;</span>s },</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    { BrewCommandType::BuiltinDev::RELEASE,                     <span class="stringliteral">&quot;release&quot;</span>s },</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    { BrewCommandType::BuiltinDev::RUBOCOP,                     <span class="stringliteral">&quot;rubocop&quot;</span>s },</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    { BrewCommandType::BuiltinDev::RUBY,                        <span class="stringliteral">&quot;ruby&quot;</span>s },</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    { BrewCommandType::BuiltinDev::SH,                          <span class="stringliteral">&quot;sh&quot;</span>s },</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    { BrewCommandType::BuiltinDev::SPONSORS,                    <span class="stringliteral">&quot;sponsors&quot;</span>s },</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    { BrewCommandType::BuiltinDev::STYLE,                       <span class="stringliteral">&quot;style&quot;</span>s },</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    { BrewCommandType::BuiltinDev::TAP_NEW,                     <span class="stringliteral">&quot;tap-new&quot;</span>s },</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    { BrewCommandType::BuiltinDev::TEST,                        <span class="stringliteral">&quot;test&quot;</span>s },</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    { BrewCommandType::BuiltinDev::TESTS,                       <span class="stringliteral">&quot;tests&quot;</span>s },</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    { BrewCommandType::BuiltinDev::TYPECHECK,                   <span class="stringliteral">&quot;typecheck&quot;</span>s },</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    { BrewCommandType::BuiltinDev::UNBOTTLED,                   <span class="stringliteral">&quot;unbottled&quot;</span>s },</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    { BrewCommandType::BuiltinDev::UNPACK,                      <span class="stringliteral">&quot;unpack&quot;</span>s },</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    { BrewCommandType::BuiltinDev::UPDATE_LICENSE_DATA,         <span class="stringliteral">&quot;update-license-data&quot;</span>s },</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    { BrewCommandType::BuiltinDev::UPDATE_MAINTAINERS,          <span class="stringliteral">&quot;update-maintainers&quot;</span>s },</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    { BrewCommandType::BuiltinDev::UPDATE_PYTHON_RESOURCES,     <span class="stringliteral">&quot;update-python-resources&quot;</span>s },</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    { BrewCommandType::BuiltinDev::UPDATE_TEST,                 <span class="stringliteral">&quot;update-test&quot;</span>s },</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    { BrewCommandType::BuiltinDev::VENDOR_GEMS,                 <span class="stringliteral">&quot;vendor-gems&quot;</span>s },</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>};</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>std::unordered_map&lt;BrewCommandType::External, std::string&gt; <span class="keyword">const</span> <a class="code hl_variable" href="struct_brew_command_head.html#a5d337ed792d1f38b4a713fd9c40b3ad2">BrewCommandHead::External</a> {</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    { BrewCommandType::External::ASPELL_DICTIONARIES,           <span class="stringliteral">&quot;aspell-dictionaries&quot;</span>s },</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    { BrewCommandType::External::DETERMINE_REBOTTLE_RUNNERS,    <span class="stringliteral">&quot;determine-rebottle-runners&quot;</span>s },</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    { BrewCommandType::External::POSTGRESQL_UPGRADE_DATABASE,   <span class="stringliteral">&quot;postgresql-upgrade-database&quot;</span>s },</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>};</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="comment">// clang-format on</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="keyword">inline</span> <span class="keyword">auto</span> getBrewCommandHead(T key) {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>}</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="keyword">inline</span> <span class="keyword">auto</span> getBrewCommandHead&lt;BrewCommandType::Builtin&gt;(<a class="code hl_enumeration" href="namespace_brew_command_type.html#a6e5f67cb3380ca5749f92bdc53c5d9e3">BrewCommandType::Builtin</a> key) {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_brew_command_head.html#a7aacce2f40b84dca998245867f21f98a">BrewCommandHead::Builtin</a>.at(key);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>}</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="keyword">inline</span> <span class="keyword">auto</span> getBrewCommandHead&lt;BrewCommandType::BuiltinDev&gt;(<a class="code hl_enumeration" href="namespace_brew_command_type.html#a8e460d8065f61c2b9b4ac946a6f7122f">BrewCommandType::BuiltinDev</a> key) {</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_brew_command_head.html#af34ae52981d676a9ad9d5ebbb12e428f">BrewCommandHead::BuiltinDev</a>.at(key);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>}</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="keyword">inline</span> <span class="keyword">auto</span> getBrewCommandHead&lt;BrewCommandType::External&gt;(<a class="code hl_enumeration" href="namespace_brew_command_type.html#a6afc601d2af463a1f124d6a42a857a44">BrewCommandType::External</a> key) {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="struct_brew_command_head.html#a5d337ed792d1f38b4a713fd9c40b3ad2">BrewCommandHead::External</a>.at(key);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>}</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespace_brew_command_type_html"><div class="ttname"><a href="namespace_brew_command_type.html">BrewCommandType</a></div><div class="ttdoc">Collection of different categories of commands Homebrew defines.</div><div class="ttdef"><b>Definition:</b> types.h:42</div></div>
+<div class="ttc" id="anamespace_brew_command_type_html_a6afc601d2af463a1f124d6a42a857a44"><div class="ttname"><a href="namespace_brew_command_type.html#a6afc601d2af463a1f124d6a42a857a44">BrewCommandType::External</a></div><div class="ttdeci">External</div><div class="ttdoc">Enumeration of external commands.</div><div class="ttdef"><b>Definition:</b> types.h:154</div></div>
+<div class="ttc" id="anamespace_brew_command_type_html_a6e5f67cb3380ca5749f92bdc53c5d9e3"><div class="ttname"><a href="namespace_brew_command_type.html#a6e5f67cb3380ca5749f92bdc53c5d9e3">BrewCommandType::Builtin</a></div><div class="ttdeci">Builtin</div><div class="ttdoc">Enumeration of built-in commands.</div><div class="ttdef"><b>Definition:</b> types.h:52</div></div>
+<div class="ttc" id="anamespace_brew_command_type_html_a8e460d8065f61c2b9b4ac946a6f7122f"><div class="ttname"><a href="namespace_brew_command_type.html#a8e460d8065f61c2b9b4ac946a6f7122f">BrewCommandType::BuiltinDev</a></div><div class="ttdeci">BuiltinDev</div><div class="ttdoc">Enumeration of built-in developer commands.</div><div class="ttdef"><b>Definition:</b> types.h:108</div></div>
+<div class="ttc" id="astruct_brew_command_head_html"><div class="ttname"><a href="struct_brew_command_head.html">BrewCommandHead</a></div><div class="ttdoc">A (namespace-like) type that declares mappings of Homebrew commands to command &quot;heads&quot;.</div><div class="ttdef"><b>Definition:</b> types.h:168</div></div>
+<div class="ttc" id="astruct_brew_command_head_html_a5d337ed792d1f38b4a713fd9c40b3ad2"><div class="ttname"><a href="struct_brew_command_head.html#a5d337ed792d1f38b4a713fd9c40b3ad2">BrewCommandHead::External</a></div><div class="ttdeci">static std::unordered_map&lt; BrewCommandType::External, std::string &gt; const External</div><div class="ttdoc">Mapping of external commands to their respective command heads.</div><div class="ttdef"><b>Definition:</b> types.h:171</div></div>
+<div class="ttc" id="astruct_brew_command_head_html_a7aacce2f40b84dca998245867f21f98a"><div class="ttname"><a href="struct_brew_command_head.html#a7aacce2f40b84dca998245867f21f98a">BrewCommandHead::Builtin</a></div><div class="ttdeci">static std::unordered_map&lt; BrewCommandType::Builtin, std::string &gt; const Builtin</div><div class="ttdoc">Mapping of built-in commands to their respective command heads.</div><div class="ttdef"><b>Definition:</b> types.h:169</div></div>
+<div class="ttc" id="astruct_brew_command_head_html_af34ae52981d676a9ad9d5ebbb12e428f"><div class="ttname"><a href="struct_brew_command_head.html#af34ae52981d676a9ad9d5ebbb12e428f">BrewCommandHead::BuiltinDev</a></div><div class="ttdeci">static std::unordered_map&lt; BrewCommandType::BuiltinDev, std::string &gt; const BuiltinDev</div><div class="ttdoc">Mapping of built-in developer commands to their respective command heads.</div><div class="ttdef"><b>Definition:</b> types.h:170</div></div>
+<div class="ttc" id="atypes_8h_html_a8d87e8335c34103f7d85b601fc9ec369"><div class="ttname"><a href="types_8h.html#a8d87e8335c34103f7d85b601fc9ec369">BrewTargetArch</a></div><div class="ttdeci">BrewTargetArch</div><div class="ttdoc">Enumeration of target machine architectures.</div><div class="ttdef"><b>Definition:</b> types.h:35</div></div>
+<div class="ttc" id="atypes_8h_html_a8d87e8335c34103f7d85b601fc9ec369a840030b2e70cfe0155e29ee926dbd8ae"><div class="ttname"><a href="types_8h.html#a8d87e8335c34103f7d85b601fc9ec369a840030b2e70cfe0155e29ee926dbd8ae">BrewTargetArch::X86_64</a></div><div class="ttdeci">@ X86_64</div></div>
+<div class="ttc" id="atypes_8h_html_a8d87e8335c34103f7d85b601fc9ec369ab9b55c80d095761ac7757ced0fedadc4"><div class="ttname"><a href="types_8h.html#a8d87e8335c34103f7d85b601fc9ec369ab9b55c80d095761ac7757ced0fedadc4">BrewTargetArch::ARM64</a></div><div class="ttdeci">@ ARM64</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

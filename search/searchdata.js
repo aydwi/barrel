@@ -1,21 +1,39 @@
 var indexSectionsWithContent =
 {
-  0: "bpstu",
+  0: "_abepstux",
   1: "bp",
-  2: "bpstu"
+  2: "b",
+  3: "bpstu",
+  4: "be",
+  5: "_be",
+  6: "be",
+  7: "ax",
+  8: "e"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "files"
+  2: "namespaces",
+  3: "files",
+  4: "functions",
+  5: "variables",
+  6: "enums",
+  7: "enumvalues",
+  8: "concepts"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Files"
+  2: "Namespaces",
+  3: "Files",
+  4: "Functions",
+  5: "Variables",
+  6: "Enumerations",
+  7: "Enumerator",
+  8: "Concepts"
 };
 

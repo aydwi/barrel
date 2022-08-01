@@ -96,17 +96,26 @@ $(document).ready(function(){initNavTree('spec_8h_source.html',''); initResizabl
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">using namespace </span>std::string_literals;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span>BrewSpec {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">inline</span> <span class="keyword">extern</span> std::string <span class="keyword">const</span> _BREW_DEFAULT_ALIAS{<span class="stringliteral">&quot;brew&quot;</span>s};</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">inline</span> <span class="keyword">extern</span> std::string <span class="keyword">const</span> _BREW_DEFAULT_PATH_X86_64{<span class="stringliteral">&quot;/usr/local/bin/brew&quot;</span>s};</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">inline</span> <span class="keyword">extern</span> std::string <span class="keyword">const</span> _BREW_DEFAULT_PATH_ARM64{<span class="stringliteral">&quot;/opt/homebrew/bin/brew&quot;</span>s};</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>} <span class="comment">// namespace BrewSpec</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">namespace </span>BarrelSpec {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">inline</span> <span class="keyword">extern</span> std::string <span class="keyword">const</span> _BREW_VERSION{<span class="stringliteral">&quot;Homebrew 3.5.4&quot;</span>s};</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>} <span class="comment">// namespace BarrelSpec</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// clang-format off</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespace_brew_spec.html">   35</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_brew_spec.html">BrewSpec</a> {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">inline</span> <span class="keyword">extern</span> std::string <span class="keyword">const</span> _BREW_DEFAULT_ALIAS{<span class="stringliteral">&quot;brew&quot;</span>s};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">inline</span> <span class="keyword">extern</span> std::string <span class="keyword">const</span> <a class="code hl_variable" href="namespace_brew_spec.html#afb2d44ff0e8961aca9912a4de622e2c2">_BREW_DEFAULT_PATH_X86_64</a>{<span class="stringliteral">&quot;/usr/local/bin/brew&quot;</span>s};   </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">inline</span> <span class="keyword">extern</span> std::string <span class="keyword">const</span> <a class="code hl_variable" href="namespace_brew_spec.html#a738338a4ec75984ddf2634c52e9b7b83">_BREW_DEFAULT_PATH_ARM64</a>{<span class="stringliteral">&quot;/opt/homebrew/bin/brew&quot;</span>s}; </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>} <span class="comment">// namespace BrewSpec</span></div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespace_barrel_spec.html">   43</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_barrel_spec.html">BarrelSpec</a> {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">inline</span> <span class="keyword">extern</span> std::string <span class="keyword">const</span> <a class="code hl_variable" href="namespace_barrel_spec.html#ab250b73207e8e18c1a0089e2ebcdf787">_BREW_VERSION</a>{<span class="stringliteral">&quot;Homebrew 3.5.4&quot;</span>s}; </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>} <span class="comment">// namespace BarrelSpec</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">// clang-format on</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="anamespace_barrel_spec_html"><div class="ttname"><a href="namespace_barrel_spec.html">BarrelSpec</a></div><div class="ttdoc">Barrel related specifications.</div><div class="ttdef"><b>Definition:</b> spec.h:43</div></div>
+<div class="ttc" id="anamespace_barrel_spec_html_ab250b73207e8e18c1a0089e2ebcdf787"><div class="ttname"><a href="namespace_barrel_spec.html#ab250b73207e8e18c1a0089e2ebcdf787">BarrelSpec::_BREW_VERSION</a></div><div class="ttdeci">std::string const _BREW_VERSION</div></div>
+<div class="ttc" id="anamespace_brew_spec_html"><div class="ttname"><a href="namespace_brew_spec.html">BrewSpec</a></div><div class="ttdoc">Homebrew related specifications.</div><div class="ttdef"><b>Definition:</b> spec.h:35</div></div>
+<div class="ttc" id="anamespace_brew_spec_html_a738338a4ec75984ddf2634c52e9b7b83"><div class="ttname"><a href="namespace_brew_spec.html#a738338a4ec75984ddf2634c52e9b7b83">BrewSpec::_BREW_DEFAULT_PATH_ARM64</a></div><div class="ttdeci">std::string const _BREW_DEFAULT_PATH_ARM64</div></div>
+<div class="ttc" id="anamespace_brew_spec_html_afb2d44ff0e8961aca9912a4de622e2c2"><div class="ttname"><a href="namespace_brew_spec.html#afb2d44ff0e8961aca9912a4de622e2c2">BrewSpec::_BREW_DEFAULT_PATH_X86_64</a></div><div class="ttdeci">std::string const _BREW_DEFAULT_PATH_X86_64</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

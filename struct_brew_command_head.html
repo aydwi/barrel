@@ -91,19 +91,78 @@ $(document).ready(function(){initNavTree('struct_brew_command_head.html',''); in
   <div class="headertitle"><div class="title">BrewCommandHead Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A (namespace-like) type that declares mappings of Homebrew commands to command "heads".  
+ <a href="struct_brew_command_head.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="types_8h_source.html">types.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:a7aacce2f40b84dca998245867f21f98a"><td class="memItemLeft" align="right" valign="top"><a id="a7aacce2f40b84dca998245867f21f98a" name="a7aacce2f40b84dca998245867f21f98a"></a>
-static std::unordered_map&lt; BrewCommandType::Builtin, std::string &gt; const&#160;</td><td class="memItemRight" valign="bottom"><b>Builtin</b></td></tr>
+<tr class="memitem:a7aacce2f40b84dca998245867f21f98a"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="namespace_brew_command_type.html#a6e5f67cb3380ca5749f92bdc53c5d9e3">BrewCommandType::Builtin</a>, std::string &gt; const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_brew_command_head.html#a7aacce2f40b84dca998245867f21f98a">Builtin</a></td></tr>
+<tr class="memdesc:a7aacce2f40b84dca998245867f21f98a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping of built-in commands to their respective command heads.  <a href="struct_brew_command_head.html#a7aacce2f40b84dca998245867f21f98a">More...</a><br /></td></tr>
 <tr class="separator:a7aacce2f40b84dca998245867f21f98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af34ae52981d676a9ad9d5ebbb12e428f"><td class="memItemLeft" align="right" valign="top"><a id="af34ae52981d676a9ad9d5ebbb12e428f" name="af34ae52981d676a9ad9d5ebbb12e428f"></a>
-static std::unordered_map&lt; BrewCommandType::BuiltinDev, std::string &gt; const&#160;</td><td class="memItemRight" valign="bottom"><b>BuiltinDev</b></td></tr>
+<tr class="memitem:af34ae52981d676a9ad9d5ebbb12e428f"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="namespace_brew_command_type.html#a8e460d8065f61c2b9b4ac946a6f7122f">BrewCommandType::BuiltinDev</a>, std::string &gt; const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_brew_command_head.html#af34ae52981d676a9ad9d5ebbb12e428f">BuiltinDev</a></td></tr>
+<tr class="memdesc:af34ae52981d676a9ad9d5ebbb12e428f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping of built-in developer commands to their respective command heads.  <a href="struct_brew_command_head.html#af34ae52981d676a9ad9d5ebbb12e428f">More...</a><br /></td></tr>
 <tr class="separator:af34ae52981d676a9ad9d5ebbb12e428f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d337ed792d1f38b4a713fd9c40b3ad2"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; BrewCommandType::External, std::string &gt; const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_brew_command_head.html#a5d337ed792d1f38b4a713fd9c40b3ad2">External</a></td></tr>
+<tr class="memitem:a5d337ed792d1f38b4a713fd9c40b3ad2"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="namespace_brew_command_type.html#a6afc601d2af463a1f124d6a42a857a44">BrewCommandType::External</a>, std::string &gt; const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_brew_command_head.html#a5d337ed792d1f38b4a713fd9c40b3ad2">External</a></td></tr>
+<tr class="memdesc:a5d337ed792d1f38b4a713fd9c40b3ad2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapping of external commands to their respective command heads.  <a href="struct_brew_command_head.html#a5d337ed792d1f38b4a713fd9c40b3ad2">More...</a><br /></td></tr>
 <tr class="separator:a5d337ed792d1f38b4a713fd9c40b3ad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A (namespace-like) type that declares mappings of Homebrew commands to command "heads". </p>
+<p >A command "head" is string representation of the first word of a Homebrew command. For example, in <code>brew --cache</code>, <code>"--cache"</code> is the command head. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7aacce2f40b84dca998245867f21f98a" name="a7aacce2f40b84dca998245867f21f98a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aacce2f40b84dca998245867f21f98a">&#9670;&nbsp;</a></span>Builtin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="namespace_brew_command_type.html#a6e5f67cb3380ca5749f92bdc53c5d9e3">BrewCommandType::Builtin</a>, std::string &gt; const BrewCommandHead::Builtin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mapping of built-in commands to their respective command heads. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_brew_command_type.html#a6e5f67cb3380ca5749f92bdc53c5d9e3" title="Enumeration of built-in commands.">BrewCommandType::Builtin</a>, <a class="el" href="struct_brew_command_head.html" title="A (namespace-like) type that declares mappings of Homebrew commands to command &quot;heads&quot;.">BrewCommandHead</a> </dd></dl>
+
+</div>
+</div>
+<a id="af34ae52981d676a9ad9d5ebbb12e428f" name="af34ae52981d676a9ad9d5ebbb12e428f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af34ae52981d676a9ad9d5ebbb12e428f">&#9670;&nbsp;</a></span>BuiltinDev</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="namespace_brew_command_type.html#a8e460d8065f61c2b9b4ac946a6f7122f">BrewCommandType::BuiltinDev</a>, std::string &gt; const BrewCommandHead::BuiltinDev</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Mapping of built-in developer commands to their respective command heads. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_brew_command_type.html#a8e460d8065f61c2b9b4ac946a6f7122f" title="Enumeration of built-in developer commands.">BrewCommandType::BuiltinDev</a>, <a class="el" href="struct_brew_command_head.html" title="A (namespace-like) type that declares mappings of Homebrew commands to command &quot;heads&quot;.">BrewCommandHead</a> </dd></dl>
+
+</div>
+</div>
 <a id="a5d337ed792d1f38b4a713fd9c40b3ad2" name="a5d337ed792d1f38b4a713fd9c40b3ad2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d337ed792d1f38b4a713fd9c40b3ad2">&#9670;&nbsp;</a></span>External</h2>
 
@@ -114,7 +173,7 @@ static std::unordered_map&lt; BrewCommandType::BuiltinDev, std::string &gt; cons
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt; BrewCommandType::External, std::string &gt; const BrewCommandHead::External</td>
+          <td class="memname">std::unordered_map&lt; <a class="el" href="namespace_brew_command_type.html#a6afc601d2af463a1f124d6a42a857a44">BrewCommandType::External</a>, std::string &gt; const BrewCommandHead::External</td>
         </tr>
       </table>
   </td>
@@ -129,6 +188,9 @@ static std::unordered_map&lt; BrewCommandType::BuiltinDev, std::string &gt; cons
 <div class="line">    { BrewCommandType::External::POSTGRESQL_UPGRADE_DATABASE,   <span class="stringliteral">&quot;postgresql-upgrade-database&quot;</span>s },</div>
 <div class="line">}</div>
 </div><!-- fragment -->
+<p>Mapping of external commands to their respective command heads. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_brew_command_type.html#a6afc601d2af463a1f124d6a42a857a44" title="Enumeration of external commands.">BrewCommandType::External</a>, <a class="el" href="struct_brew_command_head.html" title="A (namespace-like) type that declares mappings of Homebrew commands to command &quot;heads&quot;.">BrewCommandHead</a> </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
