@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Barrel: EnumType Concept Reference</title>
+<title>Barrel: include/spec.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -66,7 +66,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('concept_enum_type.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('spec_8h.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -85,17 +85,36 @@ $(document).ready(function(){initNavTree('concept_enum_type.html',''); initResiz
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">EnumType Concept Reference</div></div>
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">spec.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="utils_8h_source.html">utils.h</a>&gt;</code></p>
-<h2 class="groupheader">Concept definition</h2>
-<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> E&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="concept_enum_type.html">EnumType</a> =  std::is_enum_v&lt;E&gt;</div>
-<div class="ttc" id="aconcept_enum_type_html"><div class="ttname"><a href="concept_enum_type.html">EnumType</a></div><div class="ttdef"><b>Definition:</b> utils.h:27</div></div>
-</div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This file is part of Barrel, a header-only C++ library that provides programmatic access to the Homebrew command line interface.</p>
+<p>An internal header used by Barrel. Maintains global specifications.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+</div>
+<p><a href="spec_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a8f82c91fe9fc9f7d8bea31f8dbcd47f2"><td class="memItemLeft" align="right" valign="top"><a id="a8f82c91fe9fc9f7d8bea31f8dbcd47f2" name="a8f82c91fe9fc9f7d8bea31f8dbcd47f2"></a>
+std::string const&#160;</td><td class="memItemRight" valign="bottom"><b>BrewSpec::_BREW_DEFAULT_ALIAS</b> {&quot;brew&quot;s}</td></tr>
+<tr class="separator:a8f82c91fe9fc9f7d8bea31f8dbcd47f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb2d44ff0e8961aca9912a4de622e2c2"><td class="memItemLeft" align="right" valign="top"><a id="afb2d44ff0e8961aca9912a4de622e2c2" name="afb2d44ff0e8961aca9912a4de622e2c2"></a>
+std::string const&#160;</td><td class="memItemRight" valign="bottom"><b>BrewSpec::_BREW_DEFAULT_PATH_X86_64</b> {&quot;/usr/local/bin/brew&quot;s}</td></tr>
+<tr class="separator:afb2d44ff0e8961aca9912a4de622e2c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a738338a4ec75984ddf2634c52e9b7b83"><td class="memItemLeft" align="right" valign="top"><a id="a738338a4ec75984ddf2634c52e9b7b83" name="a738338a4ec75984ddf2634c52e9b7b83"></a>
+std::string const&#160;</td><td class="memItemRight" valign="bottom"><b>BrewSpec::_BREW_DEFAULT_PATH_ARM64</b> {&quot;/opt/homebrew/bin/brew&quot;s}</td></tr>
+<tr class="separator:a738338a4ec75984ddf2634c52e9b7b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab250b73207e8e18c1a0089e2ebcdf787"><td class="memItemLeft" align="right" valign="top"><a id="ab250b73207e8e18c1a0089e2ebcdf787" name="ab250b73207e8e18c1a0089e2ebcdf787"></a>
+std::string const&#160;</td><td class="memItemRight" valign="bottom"><b>BarrelSpec::_BREW_VERSION</b> {&quot;Homebrew 3.5.4&quot;s}</td></tr>
+<tr class="separator:ab250b73207e8e18c1a0089e2ebcdf787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >An internal header used by Barrel. Maintains global specifications. </p>
+<p >This file is part of Barrel, a header-only C++ library that provides programmatic access to the Homebrew command line interface.</p>
 <p >Copyright (C) 2022 aydwi <a href="#" onclick="location.href='mai'+'lto:'+'con'+'ta'+'ct@'+'ay'+'dwi'+'.c'+'om'; return false;">conta<span class="obfuscator">.nosp@m.</span>ct@a<span class="obfuscator">.nosp@m.</span>ydwi.<span class="obfuscator">.nosp@m.</span>com</a></p>
 <p >Barrel is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
 <p >This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
@@ -105,7 +124,7 @@ $(document).ready(function(){initNavTree('concept_enum_type.html',''); initResiz
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="concept_enum_type.html">EnumType</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="spec_8h.html">spec.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>
