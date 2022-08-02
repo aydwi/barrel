@@ -41,7 +41,7 @@ using namespace std::string_literals;
  *         Further, customize and validate the execution environment.
  */
 class Brew {
-private:
+protected:
     BrewTargetArch target_arch_;
     std::string install_path_;
     std::string install_version_;
@@ -63,7 +63,7 @@ public:
      *
      *  \sa BrewSpec
      */
-    explicit Brew();
+    Brew();
 
     /*! \brief A constructor for Brew, which allows you to specify your target
      *         architecture. Homebrew installation path is set to the default
@@ -93,7 +93,7 @@ public:
      *
      *  \sa BrewSpec
      */
-    explicit Brew(BrewTargetArch, std::string const);
+    Brew(BrewTargetArch, std::string const);
 
 public:
     std::string const& getInstallPath() const; // CUE::BARREL_H__001
@@ -148,14 +148,22 @@ private:
     E cmd_;
     std::string head_;
 
+    std::string stream_dump_{};
+    int exit_status_;
+
 public:
     explicit BrewCommand(E);
 
     template <typename... Args>
-    explicit BrewCommand(E, Args...);
+    BrewCommand(E, Args...);
 
 public:
     std::string const& getCommandHead() const;
+    std::string const& getStreamDump() const;
+    int getExitStatus() const;
+
+public:
+    void execute();
 };
 
 template <EnumType E>
@@ -168,6 +176,25 @@ BrewCommand<E>::BrewCommand(E cmd) : cmd_(cmd), head_(getBrewCommandHead(cmd)){}
 template <EnumType E>
 std::string const& BrewCommand<E>::getCommandHead() const {
     return head_;
+}
+
+template <EnumType E>
+std::string const& BrewCommand<E>::getStreamDump() const {
+    return stream_dump_;
+}
+
+template <EnumType E>
+int BrewCommand<E>::getExitStatus() const {
+    return exit_status_;
+}
+
+template <EnumType E>
+void BrewCommand<E>::execute() {
+    std::string const cmd_full = install_path_ + LE_SPACER + head_;
+    BarrelCmd::Proc proc(cmd_full, BarrelCmd::Stream::STDOUT_STDERR);
+    proc.execute();
+    stream_dump_ = proc.getStreamDump();
+    exit_status_ = proc.getExitStatus();
 }
 
 #endif

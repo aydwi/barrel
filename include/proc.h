@@ -60,7 +60,7 @@ private:
 
 public:
     explicit Proc(std::string const&);
-    explicit Proc(std::string const&, Stream);
+    Proc(std::string const&, Stream);
 
 public:
     std::string const& getStreamDump() const;
