@@ -27,16 +27,17 @@ var NAVTREE =
   [ "Barrel", "index.html", [
     [ "Namespaces", "namespaces.html", [
       [ "Quick example", "index.html#autotoc_md2", null ],
-      [ "Project goals and non-goals", "index.html#autotoc_md3", [
+      [ "Project goals and non-goals", "index.html#autotoc_md4", [
         [ "[C++ wrapper for the Homebrew CLI]", "index.html#autotoc_md1", null ],
-        [ "Goals", "index.html#autotoc_md4", null ],
-        [ "Non-goals", "index.html#autotoc_md5", null ]
+        [ "Goals", "index.html#autotoc_md6", null ],
+        [ "Non-goals", "index.html#autotoc_md7", null ],
+        [ "Undecided (as of now)", "index.html#autotoc_md8", null ]
       ] ],
-      [ "Requirements", "index.html#autotoc_md6", [
-        [ "Basic requirements", "index.html#autotoc_md7", null ],
-        [ "Optional requirements", "index.html#autotoc_md8", null ]
+      [ "Requirements", "index.html#autotoc_md9", [
+        [ "Basic requirements", "index.html#autotoc_md11", null ],
+        [ "Optional requirements", "index.html#autotoc_md12", null ]
       ] ],
-      [ "Getting started", "index.html#autotoc_md9", null ],
+      [ "Getting started", "index.html#autotoc_md13", null ],
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
@@ -69,7 +70,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122fafc27a4364395cf1d26fd253d49c2e407"
+"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faec5704f0d56945d1e5b8f9a2384a2b4b"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
