@@ -25,14 +25,14 @@
 var NAVTREE =
 [
   [ "Barrel", "index.html", [
-    [ "Namespaces", "namespaces.html", [
+    [ "Barrel (Work in progress)", "index.html", [
       [ "Quick example", "index.html#autotoc_md2", null ],
-      [ "Requirements", "index.html#autotoc_md3", [
-        [ "[C++ wrapper for the Homebrew CLI]", "index.html#autotoc_md1", null ],
-        [ "Basic requirements", "index.html#autotoc_md4", null ],
-        [ "Optional requirements", "index.html#autotoc_md5", null ]
-      ] ],
-      [ "Getting started", "index.html#autotoc_md6", null ],
+      [ "Project goals and non-goals", "index.html#autotoc_md3", null ],
+      [ "Requirements", "index.html#autotoc_md7", null ],
+      [ "Getting started", "index.html#autotoc_md10", null ],
+      [ "Credits", "index.html#autotoc_md11", null ]
+    ] ],
+    [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],

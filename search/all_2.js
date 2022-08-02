@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['barrel_0',['Barrel',['../index.html',1,'']]],
+  ['barrel_20_28work_20in_20progress_29_0',['Barrel (Work in progress)',['../index.html',1,'']]],
   ['barrel_2eh_1',['barrel.h',['../barrel_8h.html',1,'']]],
   ['barrelspec_2',['BarrelSpec',['../namespace_barrel_spec.html',1,'']]],
   ['brew_3',['Brew',['../class_brew.html#ae5d793fbfcac41cf86978b4bbf453ca9',1,'Brew::Brew(BrewTargetArch)'],['../class_brew.html#a2678df0243e6ea7da30f675155146f92',1,'Brew::Brew(BrewTargetArch, std::string const)'],['../class_brew.html#a9e77d7aa7cd913875969aa341c850ae8',1,'Brew::Brew(std::string const)'],['../class_brew.html',1,'Brew'],['../class_brew.html#a66a5ebddcad6ed510b3abc8e9fc37481',1,'Brew::Brew()']]],
