@@ -38,6 +38,7 @@ var NAVTREE =
         [ "Optional requirements", "index.html#autotoc_md12", null ]
       ] ],
       [ "Getting started", "index.html#autotoc_md13", null ],
+      [ "Credits", "index.html#autotoc_md17", null ],
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
@@ -70,7 +71,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faec5704f0d56945d1e5b8f9a2384a2b4b"
+"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faeb970203d64f5491267a22dfef93037c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
