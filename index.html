@@ -92,9 +92,66 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <h3><a class="anchor" id="autotoc_md1"></a>
 [C++ wrapper for the Homebrew CLI]</h3>
 <p >&#160;</p>
-<p >Barrel is a header-only C++ library that provides programmatic access to the Homebrew command line interface.</p>
+<p >Barrel is a header-only C++ library that provides programmatic access to the <a href="https://brew.sh">Homebrew</a> command line interface.</p>
 <p >It is intended to help build generic, non-trivial wrappers around Homebrew. For example, using Barrel, you can write a GUI frontend for Homebrew on macOS. Or it can be used to develop bespoke tooling to customize/automate Homebrew-based package configuration for your CI/CD jobs. Or it can help you work with homebrew on headless systems.</p>
-<p >Barrel exposes a succinct C++ API which can be integrated with a wide variety of libraries, tools and frameworks. Find examples further. </p>
+<p ><em>tl;dr</em>: Use Barrel wherever you want to interact with Homebrew and the shell interface just doesn't cut it.</p>
+<p >Barrel exposes a <a href="https://barrel.wiki/barrel_8h.html">well documented</a>, succinct C++ API which can be integrated with a wide variety of libraries, tools and frameworks. Find examples later.</p>
+<p >&#160;</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Quick example</h2>
+<div class="fragment"><div class="line">#include &lt;Barrel/barrel.h&gt;</div>
+<div class="line">#include &lt;iostream&gt;</div>
+<div class="line"> </div>
+<div class="line">int main(int argc, char** argv) {</div>
+<div class="line">    Brew brew;</div>
+<div class="line">    std::cout &lt;&lt; brew.getInstallPath();    // /usr/local/bin/brew</div>
+<div class="line">    std::cout &lt;&lt; brew.getInstallVersion(); // Homebrew 3.5.4</div>
+<div class="line">    </div>
+<div class="line">    BrewCommand&lt;BrewCommandType::Builtin&gt; cmd(BrewCommandType::Builtin::INFO);</div>
+<div class="line">    cmd.execute();</div>
+<div class="line">    std::cout &lt;&lt; cmd.getExitStatus(); // 0</div>
+<div class="line">    std::cout &lt;&lt; cmd.getStreamDump(); // 120 kegs, 75,556 files, 1.8GB</div>
+<div class="line">    </div>
+<div class="line">    return 0;</div>
+<div class="line">}</div>
+</div><!-- fragment --><p >This is the "Hello, World!" equivalent of using Barrel. It creates a default <code>brew</code> object to set up Homebrew execution environment, then creates a <code>cmd</code> object to execute the command <code>brew info</code>, and finally prints the exit status and output of the executed command.</p>
+<p >&#160;</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Requirements</h2>
+<p >Barrel is a header-only library, written in <a href="https://en.cppreference.com/w/cpp/20">C++20</a>. Using it can be as simple as copying the <code>include/</code> directory in your project and importing the primary header like <code>"include/barrel.h"</code>. In most cases, however, you'd want to use a build system like <a href="https://www.gnu.org/software/make/">GNU Make</a>/<a href="https://ninja-build.org/">Ninja</a>, and a build automation tool like <a href="https://cmake.org/">CMake</a> to manage building your project.</p>
+<p >Further, you require Homebrew installed of course. Barrel does not install Homebrew for you. <code>brew</code> binary must be available in your environment before using Barrel, although it is not necessary for it to be present in <code>$PATH</code>.</p>
+<h3><a class="anchor" id="autotoc_md4"></a>
+Basic requirements</h3>
+<ul>
+<li>macOS (10.15 or higher)</li>
+<li>Homebrew (<a href="https://docs.brew.sh/Installation#macos-requirements">requirements</a>)</li>
+<li>A C++ compiler (<a href="https://en.cppreference.com/w/cpp/compiler_support">C++20 or higher</a>) and the accompanying toolchain</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Optional requirements</h3>
+<ul>
+<li>GNU Make</li>
+<li>CMake (3.15 or higher)</li>
+</ul>
+<p >&#160;</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Getting started</h2>
+<ol type="1">
+<li>Get the sources (git clone/<a href="https://github.com/aydwi/barrel/archive/refs/heads/master.zip">download</a> for the latest developmental version, or get a versioned <a href="https://github.com/aydwi/barrel/releases">release</a>)</li>
+<li><p class="startli">Build Barrel</p>
+<p class="startli"><code>mkdir build &amp;&amp; cd $_</code></p>
+<p class="startli"><code>cmake -DCMAKE_BUILD_TYPE=Release ..</code></p>
+<p class="startli"><code>cmake --build . --target install</code></p>
+</li>
+</ol>
+<pre class="fragment"> These steps do the following: **1.** Create and enter a `build` directory in the project root, **2.** Configure the project for "Release" and prepare a build configuration for the actual build system (Make in this case), and **3.** Call Make to build Barrel (by compiling/linking however specified), executing the predefined `install` target to install the library. You should see an `install/` directory in the project root after step 3. Since Barrel is header-only, all the sources in `include/` simply get copied over to `install/Barrel/include/`.
+</pre><ol type="1">
+<li>Link to Barrel from your project</li>
+</ol>
+<h4><a class="anchor" id="autotoc_md7"></a>
+As an external dependency</h4>
+<h4><a class="anchor" id="autotoc_md8"></a>
+As an internal dependency</h4>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
