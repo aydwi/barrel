@@ -22,6 +22,8 @@
  *         the library.
  */
 
+// TODO: Correct broken inheritance and introduce proper command types
+
 #ifndef BARREL_H__
 #define BARREL_H__
 
