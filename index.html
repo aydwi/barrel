@@ -100,21 +100,23 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <h2><a class="anchor" id="autotoc_md2"></a>
 Quick example</h2>
 <hr  />
-<div class="fragment"><div class="line">#include &lt;Barrel/barrel.h&gt;</div>
-<div class="line">#include &lt;iostream&gt;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;Barrel/barrel.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"> </div>
-<div class="line">int main(int argc, char** argv) {</div>
-<div class="line">    Brew brew;</div>
-<div class="line">    std::cout &lt;&lt; brew.getInstallPath();    // /usr/local/bin/brew</div>
-<div class="line">    std::cout &lt;&lt; brew.getInstallVersion(); // Homebrew 3.5.4</div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv) {</div>
+<div class="line">    <a class="code hl_class" href="class_brew.html">Brew</a> brew;</div>
+<div class="line">    std::cout &lt;&lt; brew.getInstallPath();    <span class="comment">// /usr/local/bin/brew</span></div>
+<div class="line">    std::cout &lt;&lt; brew.getInstallVersion(); <span class="comment">// Homebrew 3.5.4</span></div>
 <div class="line">    </div>
-<div class="line">    BrewCommand&lt;BrewCommandType::Builtin&gt; cmd(BrewCommandType::Builtin::INFO);</div>
+<div class="line">    <a class="code hl_class" href="class_brew_command.html">BrewCommand&lt;BrewCommandType::Builtin&gt;</a> cmd(BrewCommandType::Builtin::INFO);</div>
 <div class="line">    cmd.execute();</div>
-<div class="line">    std::cout &lt;&lt; cmd.getExitStatus(); // 0</div>
-<div class="line">    std::cout &lt;&lt; cmd.getStreamDump(); // 120 kegs, 75,556 files, 1.8GB</div>
+<div class="line">    std::cout &lt;&lt; cmd.getExitStatus(); <span class="comment">// 0</span></div>
+<div class="line">    std::cout &lt;&lt; cmd.getStreamDump(); <span class="comment">// 120 kegs, 75,556 files, 1.8GB</span></div>
 <div class="line">    </div>
-<div class="line">    return 0;</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
+<div class="ttc" id="aclass_brew_command_html"><div class="ttname"><a href="class_brew_command.html">BrewCommand</a></div><div class="ttdoc">Work with Homebrew commands in your program. Set up, execute and retrieve the results of commands.</div><div class="ttdef"><b>Definition:</b> barrel.h:146</div></div>
+<div class="ttc" id="aclass_brew_html"><div class="ttname"><a href="class_brew.html">Brew</a></div><div class="ttdoc">Set up a Homebrew execution environment. Further, customize and validate the execution environment.</div><div class="ttdef"><b>Definition:</b> barrel.h:43</div></div>
 </div><!-- fragment --><p >This is the "Hello, World!" equivalent of using Barrel. It creates a default <code>brew</code> object to set up Homebrew execution environment, then creates a <code>cmd</code> object to execute the command <code>brew info</code>, and finally prints the exit status and output of the executed command.</p>
 <p >&#160;</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
