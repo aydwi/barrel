@@ -172,9 +172,9 @@ Getting started</h2>
 <li>Get the sources (git clone/<a href="https://github.com/aydwi/barrel/archive/refs/heads/master.zip">download</a> for the latest developmental version, or get a versioned <a href="https://github.com/aydwi/barrel/releases">release</a>)</li>
 <li><p class="startli">Build Barrel</p>
 <p class="startli"><code>mkdir build &amp;&amp; cd $_</code></p>
-<p class="startli"><code>cmake -DCMAKE_BUILD_TYPE=Release ..</code></p>
+<p class="startli"><code>cmake ..</code></p>
 <p class="startli"><code>cmake --build . --target install</code></p>
-<p class="startli">These steps do the following: <b>1.</b> Create and enter a <code>build</code> directory in the project root, <b>2.</b> Configure the project for "Release" and prepare a build configuration for the actual build system (Make in this case), and <b>3.</b> Call Make to build Barrel (by compiling/linking however specified), executing the predefined <code>install</code> target to install the library. You should see an <code>install/</code> directory in the project root after step 3. Since Barrel is header-only, all the sources in <code>include/</code> simply get copied over to <code>install/Barrel/include/</code>.</p>
+<p class="startli">These steps do the following: <b>1.</b> Create and enter a <code>build</code> directory in the project root, <b>2.</b> Configure the project and prepare a build configuration for the actual build system (Make in my case), and <b>3.</b> Call Make to build Barrel (by compiling/linking however specified), executing the predefined <code>install</code> target to install the library. You should see an <code>install/</code> directory in the project root after step 3. Since Barrel is header-only, all the sources in <code>include/</code> simply <a href="https://github.com/aydwi/barrel/blob/master/CMakeLists.txt#L58">get copied over</a> to <code>install/Barrel/include/</code>.</p>
 </li>
 <li>Link to Barrel from your project</li>
 </ol>
