@@ -118,6 +118,15 @@ template&lt;typename... Args&gt; </td></tr>
 <tr class="memitem:a479ab8da56b927da54c0dd541f99ddfa"><td class="memItemLeft" align="right" valign="top"><a id="a479ab8da56b927da54c0dd541f99ddfa" name="a479ab8da56b927da54c0dd541f99ddfa"></a>
 std::string const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getCommandHead</b> () const</td></tr>
 <tr class="separator:a479ab8da56b927da54c0dd541f99ddfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1baa7df2ed5e35ad68d360e6f7a5caa7"><td class="memItemLeft" align="right" valign="top"><a id="a1baa7df2ed5e35ad68d360e6f7a5caa7" name="a1baa7df2ed5e35ad68d360e6f7a5caa7"></a>
+std::string const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getStreamDump</b> () const</td></tr>
+<tr class="separator:a1baa7df2ed5e35ad68d360e6f7a5caa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a770927f8b4227124300926fbe7a2f81a"><td class="memItemLeft" align="right" valign="top"><a id="a770927f8b4227124300926fbe7a2f81a" name="a770927f8b4227124300926fbe7a2f81a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>getExitStatus</b> () const</td></tr>
+<tr class="separator:a770927f8b4227124300926fbe7a2f81a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0080b5d658da94363060b81a76c12831"><td class="memItemLeft" align="right" valign="top"><a id="a0080b5d658da94363060b81a76c12831" name="a0080b5d658da94363060b81a76c12831"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> ()</td></tr>
+<tr class="separator:a0080b5d658da94363060b81a76c12831"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_brew"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_brew')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_brew.html">Brew</a></td></tr>
 <tr class="memitem:a66a5ebddcad6ed510b3abc8e9fc37481 inherit pub_methods_class_brew"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_brew.html#a66a5ebddcad6ed510b3abc8e9fc37481">Brew</a> ()</td></tr>
 <tr class="memdesc:a66a5ebddcad6ed510b3abc8e9fc37481 inherit pub_methods_class_brew"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="class_brew.html" title="Set up a Homebrew execution environment. Further, customize and validate the execution environment.">Brew</a>. Roll the spartan way.  <a href="class_brew.html#a66a5ebddcad6ed510b3abc8e9fc37481">More...</a><br /></td></tr>
@@ -150,6 +159,16 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>skip_validatio
 <tr class="memitem:ab8b9ab0a3ba34b4aa3317024757c786b inherit pub_static_attribs_class_brew"><td class="memItemLeft" align="right" valign="top"><a id="ab8b9ab0a3ba34b4aa3317024757c786b" name="ab8b9ab0a3ba34b4aa3317024757c786b"></a>
 static std::string const&#160;</td><td class="memItemRight" valign="bottom"><b>spec_version</b> {<a class="el" href="namespace_barrel_spec.html#ab250b73207e8e18c1a0089e2ebcdf787">BarrelSpec::_BREW_VERSION</a>}</td></tr>
 <tr class="separator:ab8b9ab0a3ba34b4aa3317024757c786b inherit pub_static_attribs_class_brew"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_brew"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_brew')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_brew.html">Brew</a></td></tr>
+<tr class="memitem:ac466821a42d78ca7d0b8b1b6ef9ea09b inherit pro_attribs_class_brew"><td class="memItemLeft" align="right" valign="top"><a id="ac466821a42d78ca7d0b8b1b6ef9ea09b" name="ac466821a42d78ca7d0b8b1b6ef9ea09b"></a>
+<a class="el" href="types_8h.html#a8d87e8335c34103f7d85b601fc9ec369">BrewTargetArch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>target_arch_</b></td></tr>
+<tr class="separator:ac466821a42d78ca7d0b8b1b6ef9ea09b inherit pro_attribs_class_brew"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667eb2b4ecb09589df34b8e4cca6caca inherit pro_attribs_class_brew"><td class="memItemLeft" align="right" valign="top"><a id="a667eb2b4ecb09589df34b8e4cca6caca" name="a667eb2b4ecb09589df34b8e4cca6caca"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>install_path_</b></td></tr>
+<tr class="separator:a667eb2b4ecb09589df34b8e4cca6caca inherit pro_attribs_class_brew"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d219450281e7bd4e9a0c08ea23f8ad3 inherit pro_attribs_class_brew"><td class="memItemLeft" align="right" valign="top"><a id="a6d219450281e7bd4e9a0c08ea23f8ad3" name="a6d219450281e7bd4e9a0c08ea23f8ad3"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>install_version_</b></td></tr>
+<tr class="separator:a6d219450281e7bd4e9a0c08ea23f8ad3 inherit pro_attribs_class_brew"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="concept_enum_type.html">EnumType</a> E&gt;<br />

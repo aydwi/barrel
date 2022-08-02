@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('class_brew.html',''); initResizable();
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_brew-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Brew Class Reference</div></div>
 </div><!--header-->
@@ -139,6 +140,18 @@ static bool&#160;</td><td class="memItemRight" valign="bottom"><b>skip_validatio
 <tr class="memitem:ab8b9ab0a3ba34b4aa3317024757c786b"><td class="memItemLeft" align="right" valign="top"><a id="ab8b9ab0a3ba34b4aa3317024757c786b" name="ab8b9ab0a3ba34b4aa3317024757c786b"></a>
 static std::string const&#160;</td><td class="memItemRight" valign="bottom"><b>spec_version</b> {<a class="el" href="namespace_barrel_spec.html#ab250b73207e8e18c1a0089e2ebcdf787">BarrelSpec::_BREW_VERSION</a>}</td></tr>
 <tr class="separator:ab8b9ab0a3ba34b4aa3317024757c786b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ac466821a42d78ca7d0b8b1b6ef9ea09b"><td class="memItemLeft" align="right" valign="top"><a id="ac466821a42d78ca7d0b8b1b6ef9ea09b" name="ac466821a42d78ca7d0b8b1b6ef9ea09b"></a>
+<a class="el" href="types_8h.html#a8d87e8335c34103f7d85b601fc9ec369">BrewTargetArch</a>&#160;</td><td class="memItemRight" valign="bottom"><b>target_arch_</b></td></tr>
+<tr class="separator:ac466821a42d78ca7d0b8b1b6ef9ea09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667eb2b4ecb09589df34b8e4cca6caca"><td class="memItemLeft" align="right" valign="top"><a id="a667eb2b4ecb09589df34b8e4cca6caca" name="a667eb2b4ecb09589df34b8e4cca6caca"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>install_path_</b></td></tr>
+<tr class="separator:a667eb2b4ecb09589df34b8e4cca6caca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d219450281e7bd4e9a0c08ea23f8ad3"><td class="memItemLeft" align="right" valign="top"><a id="a6d219450281e7bd4e9a0c08ea23f8ad3" name="a6d219450281e7bd4e9a0c08ea23f8ad3"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>install_version_</b></td></tr>
+<tr class="separator:a6d219450281e7bd4e9a0c08ea23f8ad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Set up a Homebrew execution environment. Further, customize and validate the execution environment. </p>
@@ -148,9 +161,6 @@ static std::string const&#160;</td><td class="memItemRight" valign="bottom"><b>s
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Brew::Brew </td>
@@ -159,11 +169,6 @@ static std::string const&#160;</td><td class="memItemRight" valign="bottom"><b>s
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Default constructor for <a class="el" href="class_brew.html" title="Set up a Homebrew execution environment. Further, customize and validate the execution environment.">Brew</a>. Roll the spartan way. </p>
@@ -247,9 +252,6 @@ static std::string const&#160;</td><td class="memItemRight" valign="bottom"><b>s
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Brew::Brew </td>
@@ -269,11 +271,6 @@ static std::string const&#160;</td><td class="memItemRight" valign="bottom"><b>s
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>A constructor for <a class="el" href="class_brew.html" title="Set up a Homebrew execution environment. Further, customize and validate the execution environment.">Brew</a>, which allows you to specify both your target architecture and a custom path for your Homebrew installation. </p>
