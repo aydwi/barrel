@@ -127,11 +127,8 @@ Goals</h3>
 <li>Provide a performant, robust and type-safe API to interact with Homebrew on macOS — Core commands supported in the initial release with an increasing support for commands in each subsequent release.</li>
 <li>Maintain portability — Work with several toolchains, avoid external dependencies.</li>
 <li>Easy to work with — Reasonable defaults, plentiful overrides, intuitive exception handling.</li>
-<li>Track upstream Homebrew releases closely — Quick API updates when something breaks.</li>
 <li>Establish a high quality codebase; make effective use of facilities provided by modern C++ standards (11 and above, but focus on 20 and 23).</li>
-<li>Provide high quality documentation of the API and library internals; quality over quantity.</li>
-<li>Serve as a learning mechanism for the author — Intermediate/advanced C++ techniques, library authorship and maintenance.</li>
-<li>Serve as a learning mechanism for new C++ programmers and the community — Reading library code should be pleasant, helpful "cues" for a variety of techniques.</li>
+<li>Serve as a learning mechanism for the author — Intermediate/advanced C++ techniques, library authorship and maintenance. Further, serve as a learning mechanism for new C++ programmers and the community — Reading library code should be pleasant, helpful "cues" for a variety of techniques used in the source.</li>
 </ol>
 <h3><a class="anchor" id="autotoc_md5"></a>
 Non-goals</h3>
@@ -174,11 +171,11 @@ Getting started</h1>
 <p class="startli">These steps do the following: <b>1.</b> Create and enter a <code>build</code> directory in the project root, <b>2.</b> Configure the project and prepare a build configuration for the actual build system (Make in my case), and <b>3.</b> Call Make to build Barrel (by compiling/linking however specified), executing the predefined <code>install</code> target to install the library. You should see an <code>install/</code> directory in the project root after step 3. Since Barrel is header-only, all the sources in <code>include/</code> simply <a href="https://github.com/aydwi/barrel/blob/master/CMakeLists.txt#L58">get copied over</a> to <code>install/Barrel/include/</code>.</p>
 </li>
 <li>Link to Barrel from your project<ul>
-<li><p class="startli">#### <ins>As an external dependency</ins></p>
-<p class="startli">Say you have a project you want to include Barrel in, but you do not want to add Barrel to your project's source tree. In this case, you can include Barrel as an external dependency after building it. <a href="https://cmake.org/cmake/help/latest/command/find_package.html#find-package"><code>find_package</code></a> makes it starightforward.</p>
-<p class="startli">I have included a simple CMakeLists.txt example you can consult at <a href="https://github.com/aydwi/barrel/blob/master/examples/cmake/external/CMakeLists.txt"><code>examples/external/CMakeLists.txt</code></a>.</p>
+<li><p class="startli"><ins><b>As an external dependency</b></ins></p>
+<p class="startli">Say you have a project you want to include Barrel in, but you do not want to add Barrel to your project's source tree. In this case, you can include Barrel as an external dependency after building it.</p>
+<p class="startli">CMake <a href="https://cmake.org/cmake/help/latest/command/find_package.html#find-package"><code>find_package</code></a> makes it straightforward. I have included a simple CMakeLists.txt example you can consult at <a href="https://github.com/aydwi/barrel/blob/master/examples/cmake/external/CMakeLists.txt"><code>examples/external/CMakeLists.txt</code></a>.</p>
 </li>
-<li>#### <ins>As an internal dependency</ins></li>
+<li><ins><b>As an internal dependency</b></ins></li>
 </ul>
 </li>
 </ol>
