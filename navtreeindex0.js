@@ -15,13 +15,12 @@ var NAVTREEINDEX0 =
 "concepts.html":[2],
 "dir_d44c64559bbebec7f509842c48db8b23.html":[4,0,0],
 "files.html":[4,0],
-"functions.html":[3,3,0],
-"functions_func.html":[3,3,1],
-"functions_vars.html":[3,3,2],
+"functions.html":[3,2,0],
+"functions_func.html":[3,2,1],
+"functions_vars.html":[3,2,2],
 "globals.html":[4,1,0],
 "globals_enum.html":[4,1,2],
 "globals_func.html":[4,1,1],
-"hierarchy.html":[3,2],
 "index.html":[0],
 "index.html":[],
 "index.html#autotoc_md2":[0,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faeb970203d64f5491267a22dfef93037c":[4,0,0,3,3,23],
 "types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faec5704f0d56945d1e5b8f9a2384a2b4b":[4,0,0,3,3,27],
 "types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122fafc27a4364395cf1d26fd253d49c2e407":[4,0,0,3,3,16],
-"types_8h_source.html":[4,0,0,3]
+"types_8h_source.html":[4,0,0,3],
+"utils_8h.html":[4,0,0,4]
 };

@@ -108,7 +108,7 @@ Quick example</h1>
 <div class="line">    std::cout &lt;&lt; brew.getInstallPath();    <span class="comment">// /usr/local/bin/brew</span></div>
 <div class="line">    std::cout &lt;&lt; brew.getInstallVersion(); <span class="comment">// Homebrew 3.5.4</span></div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="class_brew_command.html">BrewCommand&lt;BrewCommandType::Builtin&gt;</a> cmd(BrewCommandType::Builtin::INFO);</div>
+<div class="line">    <a class="code hl_class" href="class_brew_command.html">BrewCommand&lt;BrewCommandType::Builtin&gt;</a> cmd(brew, BrewCommandType::Builtin::INFO);</div>
 <div class="line">    cmd.execute();</div>
 <div class="line">    std::cout &lt;&lt; cmd.getExitStatus(); <span class="comment">// 0</span></div>
 <div class="line">    std::cout &lt;&lt; cmd.getStreamDump(); <span class="comment">// 120 kegs, 75,556 files, 1.8GB</span></div>
