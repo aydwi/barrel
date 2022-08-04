@@ -10,6 +10,7 @@ var NAVTREEINDEX0 =
 "class_brew.html#a9e77d7aa7cd913875969aa341c850ae8":[3,0,1,2],
 "class_brew.html#ae5d793fbfcac41cf86978b4bbf453ca9":[3,0,1,1],
 "class_brew_command.html":[3,0,2],
+"class_brew_command.html#ab92b75652fa9a3e4c8a586f8f81d0d59":[3,0,2,0],
 "classes.html":[3,1],
 "concept_enum_type.html":[2,0],
 "concepts.html":[2],
@@ -22,8 +23,8 @@ var NAVTREEINDEX0 =
 "globals_enum.html":[4,1,2],
 "globals_func.html":[4,1,1],
 "hierarchy.html":[3,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#autotoc_md2":[0,0],
 "index.html#autotoc_md3":[0,1],
 "index.html#autotoc_md4":[0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122fae00c29f94916fab05867445046ac14cc":[4,0,0,3,3,33],
 "types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122fae1ec02a221942fbe375d060277c85011":[4,0,0,3,3,38],
 "types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faeb970203d64f5491267a22dfef93037c":[4,0,0,3,3,23],
-"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faec5704f0d56945d1e5b8f9a2384a2b4b":[4,0,0,3,3,27],
-"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122fafc27a4364395cf1d26fd253d49c2e407":[4,0,0,3,3,16]
+"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faec5704f0d56945d1e5b8f9a2384a2b4b":[4,0,0,3,3,27]
 };

@@ -92,16 +92,16 @@ $(document).ready(function(){initNavTree('class_brew_command.html',''); initResi
 </div><!--header-->
 <div class="contents">
 
-<p>Work with Homebrew commands in your program. Set up, execute and retrieve the results of commands.  
+<p>Work with Homebrew commands in your program including set-up, execution and retrieval of the results of arbitrary Homebrew commands. The template class must be instantiated with an appropriate type from the namespace <a class="el" href="namespace_brew_command_type.html" title="Collection of Homebrew command categories.">BrewCommandType</a>.  
  <a href="class_brew_command.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="barrel_8h_source.html">barrel.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab92b75652fa9a3e4c8a586f8f81d0d59"><td class="memTemplParams" colspan="2"><a id="ab92b75652fa9a3e4c8a586f8f81d0d59" name="ab92b75652fa9a3e4c8a586f8f81d0d59"></a>
-template&lt;typename... Args&gt; </td></tr>
-<tr class="memitem:ab92b75652fa9a3e4c8a586f8f81d0d59"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>BrewCommand</b> (<a class="el" href="class_brew.html">Brew</a>, E, Args...)</td></tr>
+<tr class="memitem:ab92b75652fa9a3e4c8a586f8f81d0d59"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:ab92b75652fa9a3e4c8a586f8f81d0d59"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_brew_command.html#ab92b75652fa9a3e4c8a586f8f81d0d59">BrewCommand</a> (<a class="el" href="class_brew.html">Brew</a>, E, Args...)</td></tr>
+<tr class="memdesc:ab92b75652fa9a3e4c8a586f8f81d0d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">A variadic constructor for <a class="el" href="class_brew_command.html" title="Work with Homebrew commands in your program including set-up, execution and retrieval of the results ...">BrewCommand</a>.  <a href="class_brew_command.html#ab92b75652fa9a3e4c8a586f8f81d0d59">More...</a><br /></td></tr>
 <tr class="separator:ab92b75652fa9a3e4c8a586f8f81d0d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45547d0910ce935604eb60adaffe20c5"><td class="memItemLeft" align="right" valign="top"><a id="a45547d0910ce935604eb60adaffe20c5" name="a45547d0910ce935604eb60adaffe20c5"></a>
 std::string const &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getHead</b> () const</td></tr>
@@ -121,8 +121,59 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>execute</b> ()</td></
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="concept_enum_type.html">EnumType</a> E&gt;<br />
-class BrewCommand&lt; E &gt;</div><p >Work with Homebrew commands in your program. Set up, execute and retrieve the results of commands. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+class BrewCommand&lt; E &gt;</div><p >Work with Homebrew commands in your program including set-up, execution and retrieval of the results of arbitrary Homebrew commands. The template class must be instantiated with an appropriate type from the namespace <a class="el" href="namespace_brew_command_type.html" title="Collection of Homebrew command categories.">BrewCommandType</a>. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab92b75652fa9a3e4c8a586f8f81d0d59" name="ab92b75652fa9a3e4c8a586f8f81d0d59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab92b75652fa9a3e4c8a586f8f81d0d59">&#9670;&nbsp;</a></span>BrewCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="concept_enum_type.html">EnumType</a> E&gt; </div>
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_brew_command.html">BrewCommand</a>&lt; E &gt;<a class="el" href="class_brew_command.html">::BrewCommand</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_brew.html">Brew</a>&#160;</td>
+          <td class="paramname"><em>brew</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">E&#160;</td>
+          <td class="paramname"><em>cmd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A variadic constructor for <a class="el" href="class_brew_command.html" title="Work with Homebrew commands in your program including set-up, execution and retrieval of the results ...">BrewCommand</a>. </p>
+<p >This is the singular constructor offered by <a class="el" href="class_brew_command.html" title="Work with Homebrew commands in your program including set-up, execution and retrieval of the results ...">BrewCommand</a>. Due to it being variadic, an arbitrary number of arguments can be passed to the constructor. Barrel expects you to pass a chain of Homebrew arguments that follow your choice of command thereby allowing any possible Homebrew command to be executed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">brew</td><td>An object of type <a class="el" href="class_brew.html" title="Set up a Homebrew execution environment. Further, customize and validate the execution environment.">Brew</a> </td></tr>
+    <tr><td class="paramname">cmd</td><td>The brew command you want to execute </td></tr>
+    <tr><td class="paramname">args</td><td>A parameter pack representing in order, the chain of options/text that follows <em>cmd</em> as prescribed by Homebrew. The following object types are allowed in the parameter pack: <code>const char*</code>, <code>std::string</code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="namespace_brew_command_type.html" title="Collection of Homebrew command categories.">BrewCommandType</a> </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>include/<a class="el" href="barrel_8h_source.html">barrel.h</a></li>
 </ul>
 </div><!-- contents -->
