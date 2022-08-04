@@ -64,7 +64,7 @@ public:
     inline static std::string const spec_version{BarrelSpec::_BREW_VERSION};
 
 public:
-    /*! \brief Default constructor for Brew. Roll the spartan way.
+    /*! \brief Default constructor for Brew.
      *
      *  The simplest way to construct a Brew object. Barrel defaults the
      *  target architecture to BrewTargetArch::X86_64 and correspondingly
@@ -148,8 +148,10 @@ std::string const& Brew::getInstallVersion() const {
     return install_version_;
 }
 
-/*! \brief Work with Homebrew commands in your program.
- *         Set up, execute and retrieve the results of commands.
+/*! \brief Work with Homebrew commands in your program including set-up,
+ *         execution and retrieval of the results of arbitrary Homebrew
+ *         commands. The template class must be instantiated with an
+ *         appropriate type from the namespace ::BrewCommandType.
  */
 template <EnumType E>
 class BrewCommand {
@@ -164,6 +166,25 @@ private:
     std::queue<std::variant<const char*, std::string>> q_{};
 
 public:
+    /*! \brief A variadic constructor for BrewCommand.
+     *
+     *  This is the singular constructor offered by BrewCommand. Due
+     *  to it being variadic, an arbitrary number of arguments can be
+     *  passed to the constructor. Barrel expects you to pass a chain
+     *  of Homebrew arguments that follow your choice of command thereby
+     *  allowing any possible Homebrew command to be executed.
+     *
+     *
+     *  \param brew An object of type ::Brew
+     *  \param cmd The brew command you want to execute
+     *  \param args A parameter pack representing in order,
+     *              the chain of options/text that follows
+     *              *cmd* as prescribed by Homebrew. The
+     *              following object types are allowed in the
+     *              parameter pack: `const char*`, `std::string`
+     *
+     *  \sa BrewCommandType
+     */
     template <typename... Args>
     BrewCommand(Brew, E, Args...);
 

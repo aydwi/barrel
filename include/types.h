@@ -37,7 +37,7 @@ enum class BrewTargetArch {
     ARM64,  /*!< 64 bit ARM environment */
 };
 
-/*! \brief Collection of different categories of commands Homebrew defines.
+/*! \brief Collection of Homebrew command categories.
  */
 namespace BrewCommandType {
 enum class Builtin;    /*!< "Built-in" command type */
