@@ -28,9 +28,9 @@ var NAVTREE =
     [ "Barrel (Work in progress)", "index.html", [
       [ "Quick example", "index.html#autotoc_md2", null ],
       [ "Project goals and non-goals", "index.html#autotoc_md3", null ],
-      [ "Requirements", "index.html#autotoc_md7", null ],
-      [ "Getting started", "index.html#autotoc_md10", null ],
-      [ "Credits", "index.html#autotoc_md11", null ]
+      [ "Requirements", "index.html#autotoc_md5", null ],
+      [ "Getting started", "index.html#autotoc_md8", null ],
+      [ "Credits", "index.html#autotoc_md9", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

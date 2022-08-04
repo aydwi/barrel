@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <p >Barrel is a portable header-only C++ library that provides programmatic access to the <a href="https://brew.sh">Homebrew</a> command line interface.</p>
 <p >It is intended to help build generic, non-trivial wrappers around Homebrew. For example, using Barrel, you can write a GUI frontend for Homebrew on macOS. Or it can be used to develop bespoke tooling to customize/automate Homebrew-based package configuration for your CI/CD jobs. Or it can help you work with homebrew on headless systems.</p>
 <p ><em>tl;dr: Use Barrel whenever you want to interact with Homebrew and the shell interface just doesn't cut it.</em></p>
-<p >Barrel exposes a <a href="https://barrel.wiki/barrel_8h.html">well documented</a>, succinct C++ API which can be integrated with a wide variety of libraries, tools and frameworks. Find examples later.</p>
+<p >Barrel exposes a <a href="https://barrel.wiki/barrel_8h.html">well documented</a>, succinct C++ API which can be integrated with a wide variety of libraries, tools and frameworks. Find examples in the <a href="https://github.com/aydwi/barrel/wiki">Wiki</a>.</p>
 <p >&#160;</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Quick example</h1>
@@ -122,45 +122,27 @@ Quick example</h1>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Project goals and non-goals</h1>
 <h3><a class="anchor" id="autotoc_md4"></a>
-Goals</h3>
-<ol type="1">
-<li>Provide a performant, robust and type-safe API to interact with Homebrew on macOS — Core commands supported in the initial release with an increasing support for commands in each subsequent release.</li>
-<li>Maintain portability — Work with several toolchains, avoid external dependencies.</li>
-<li>Easy to work with — Reasonable defaults, plentiful overrides, intuitive exception handling.</li>
-<li>Establish a high quality codebase; make effective use of facilities provided by modern C++ standards (11 and above, but focus on 20 and 23).</li>
-<li>Serve as a learning mechanism for the author — Intermediate/advanced C++ techniques, library authorship and maintenance. Further, serve as a learning mechanism for new C++ programmers and the community — Reading library code should be pleasant, helpful "cues" for a variety of techniques used in the source.</li>
-</ol>
-<h3><a class="anchor" id="autotoc_md5"></a>
-Non-goals</h3>
-<ol type="1">
-<li>Provide a comprehensive API to the entirety of Homebrew at all times; Homebrew is enormous, I am a graduate student and work on Barrel in my spare time. API support will be on a best-effort and community recommendation basis.</li>
-<li>Support Linuxbrew or non-Apple platforms.</li>
-</ol>
-<h3><a class="anchor" id="autotoc_md6"></a>
-Undecided (as of now)</h3>
-<ol type="1">
-<li>Provide versioned APIs for different major releases of Homebrew.</li>
-</ol>
+&lt;a href="https://github.com/aydwi/barrel/wiki/Goals-and-Non-goals" &gt;See the Wiki&lt;/a&gt;</h3>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Requirements</h1>
 <p >Barrel is a header-only library, written in <a href="https://en.cppreference.com/w/cpp/20">C++20</a>. Using it can be as simple as copying the <code>include/</code> directory in your project and importing the primary header like <code>"include/barrel.h"</code>. In most cases, however, you'd want to use a build system like <a href="https://www.gnu.org/software/make/">GNU Make</a>/<a href="https://ninja-build.org/">Ninja</a>, and a build automation tool like <a href="https://cmake.org/">CMake</a> to manage building your project.</p>
 <p >Further, you need an installation of Homebrew. Barrel does not install Homebrew for you. A <code>brew</code> binary must be available somewhere in your environment before using Barrel, although it is not necessary for it to be present in <code>$PATH</code>.</p>
-<h3><a class="anchor" id="autotoc_md8"></a>
+<h3><a class="anchor" id="autotoc_md6"></a>
 Basic requirements</h3>
 <ul>
 <li>macOS (10.15 or higher)</li>
 <li>Homebrew (<a href="https://docs.brew.sh/Installation#macos-requirements">requirements</a>)</li>
 <li>A C++ compiler (<a href="https://en.cppreference.com/w/cpp/compiler_support">C++20 or higher</a>) and the accompanying toolchain</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md9"></a>
+<h3><a class="anchor" id="autotoc_md7"></a>
 Optional requirements</h3>
 <ul>
 <li>GNU Make</li>
 <li>CMake (3.15 or higher)</li>
 </ul>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Getting started</h1>
 <ol type="1">
 <li>Get the sources (git clone/<a href="https://github.com/aydwi/barrel/archive/refs/heads/master.zip">download</a> for the latest developmental version, or get a versioned <a href="https://github.com/aydwi/barrel/releases">release</a>)</li>
@@ -180,7 +162,7 @@ Getting started</h1>
 </li>
 </ol>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Credits</h1>
 <ul>
 <li>Project Logo: <a href="https://www.vecteezy.com/free-vector/icons">Vecteezy</a></li>
