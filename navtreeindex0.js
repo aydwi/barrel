@@ -22,13 +22,14 @@ var NAVTREEINDEX0 =
 "globals_enum.html":[4,1,2],
 "globals_func.html":[4,1,1],
 "hierarchy.html":[3,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "index.html#autotoc_md2":[0,0],
 "index.html#autotoc_md3":[0,1],
 "index.html#autotoc_md4":[0,2],
-"index.html#autotoc_md7":[0,3],
+"index.html#autotoc_md5":[0,3],
 "index.html#autotoc_md8":[0,4],
+"index.html#autotoc_md9":[0,5],
 "namespace_barrel_spec.html":[1,0,0],
 "namespace_barrel_spec.html#ab250b73207e8e18c1a0089e2ebcdf787":[1,0,0,0],
 "namespace_brew_command_type.html":[1,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faeb970203d64f5491267a22dfef93037c":[4,0,0,3,3,23],
 "types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faec5704f0d56945d1e5b8f9a2384a2b4b":[4,0,0,3,3,27],
 "types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122fafc27a4364395cf1d26fd253d49c2e407":[4,0,0,3,3,16],
-"types_8h_source.html":[4,0,0,3],
-"utils_8h.html":[4,0,0,4]
+"types_8h_source.html":[4,0,0,3]
 };
