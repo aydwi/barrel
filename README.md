@@ -4,10 +4,10 @@
      src="https://user-images.githubusercontent.com/29029116/182253248-76daa80d-21b9-40bb-aa58-0911973c3330.svg" width="300"/>
 
 #### [C++ wrapper for the Homebrew CLI]
-[![GitHub](https://img.shields.io/badge/GitHub--ffffff?style=social&logo=github)](https://github.com/aydwi/barrel)
+[![CircleCI](https://img.shields.io/circleci/build/github/aydwi/barrel/master?logo=circleci)](https://dl.circleci.com/status-badge/redirect/gh/aydwi/barrel/tree/master)
+[![GitHub](https://img.shields.io/badge/Source--ffffff?style=social&logo=github)](https://github.com/aydwi/barrel)
 [![GitHub issues](https://img.shields.io/github/issues/aydwi/barrel?style=social&logo=github)](https://github.com/aydwi/barrel/issues)
 [![Twitter](https://img.shields.io/twitter/url?label=Tweet&style=social&url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel)](https://twitter.com/intent/tweet?text=Barrel%20-%20A%20C%2B%2B%20wrapper%20for%20the%20Homebrew%20CLI:&url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel)
-
 
 &nbsp;
 
