@@ -57,7 +57,7 @@ private:
 
 private:
     std::string stream_dump_{};
-    int exit_code_;
+    int exit_code_{INT_MIN};
 
 public:
     explicit Proc(std::string const&);

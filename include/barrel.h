@@ -41,6 +41,8 @@
 #include <utility>
 #include <variant>
 
+#define BAD_EXIT_ST INT_MAX & 0xff
+
 using namespace std::string_literals;
 
 template <typename>
@@ -92,7 +94,7 @@ public:
      *
      *  \sa BrewSpec
      */
-    explicit Brew(std::string const);
+    explicit Brew(std::string const&);
 
     /*! \brief A constructor for Brew, which allows you to specify both your target
      *         architecture and a custom path for your Homebrew installation.
@@ -102,7 +104,7 @@ public:
      *
      *  \sa BrewSpec
      */
-    Brew(BrewTargetArch, std::string const);
+    Brew(BrewTargetArch, std::string const&);
 
 public:
     std::string const& getInstallPath() const; // BARREL_H__001
@@ -126,14 +128,14 @@ void Brew::validateBrewInstallation() {
     }
 }
 
-Brew::Brew(BrewTargetArch target_arch, std::string const install_path)
+Brew::Brew(BrewTargetArch target_arch, std::string const& install_path)
     : target_arch_(target_arch), install_path_(install_path) {
     if (Brew::skip_validation)
         return;
     validateBrewInstallation();
 };
 
-Brew::Brew(std::string const install_path) : Brew{BrewTargetArch::X86_64, install_path} {};
+Brew::Brew(std::string const& install_path) : Brew{BrewTargetArch::X86_64, install_path} {};
 
 Brew::Brew(BrewTargetArch target_arch)
     : Brew{target_arch, target_arch == BrewTargetArch::X86_64 ? BrewSpec::_BREW_DEFAULT_PATH_X86_64
@@ -160,7 +162,7 @@ private:
     std::string head_{};
     std::string chain_{};
     std::string stream_dump_{};
-    int exit_status_;
+    int exit_status_{BAD_EXIT_ST};
 
 private:
     std::queue<std::variant<const char*, std::string>> q_{};
@@ -186,7 +188,7 @@ public:
      *  \sa BrewCommandType
      */
     template <typename... Args>
-    BrewCommand(Brew, E, Args...);
+    BrewCommand(Brew const&, E, Args...);
 
 public:
     std::string const& getHead() const;
@@ -202,7 +204,7 @@ public:
 
 template <EnumType E>
 template <typename... Args>
-BrewCommand<E>::BrewCommand(Brew brew, E cmd, Args... args)
+BrewCommand<E>::BrewCommand(Brew const& brew, E cmd, Args... args)
     : cmd_(cmd), head_(getCommandHead(cmd)), chain_(brew.getInstallPath()) {
     (q_.push(std::forward<Args>(args)), ...);
     chain_ += LE_SPACER + head_;
