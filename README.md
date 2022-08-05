@@ -4,23 +4,24 @@
      src="https://user-images.githubusercontent.com/29029116/182253248-76daa80d-21b9-40bb-aa58-0911973c3330.svg" width="300"/>
 
 #### [C++ wrapper for the Homebrew CLI]
-[![CircleCI](https://img.shields.io/circleci/build/github/aydwi/barrel/master?logo=circleci)](https://dl.circleci.com/status-badge/redirect/gh/aydwi/barrel/tree/master)
+
+[![CircleCI](https://img.shields.io/circleci/build/github/aydwi/barrel/master?label=static%20checks&logo=circleci&style=social)](https://dl.circleci.com/status-badge/redirect/gh/aydwi/barrel/tree/master)
 [![GitHub](https://img.shields.io/badge/Source--ffffff?style=social&logo=github)](https://github.com/aydwi/barrel)
-[![GitHub issues](https://img.shields.io/github/issues/aydwi/barrel?style=social&logo=github)](https://github.com/aydwi/barrel/issues)
-[![Twitter](https://img.shields.io/twitter/url?label=Tweet&style=social&url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel)](https://twitter.com/intent/tweet?text=Barrel%20-%20A%20C%2B%2B%20wrapper%20for%20the%20Homebrew%20CLI:&url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel)
+[![Twitter](https://img.shields.io/twitter/url?label=Share&style=social&url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel)](https://twitter.com/intent/tweet?text=Barrel%20-%20A%20C%2B%2B%20wrapper%20for%20the%20Homebrew%20CLI:&url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel)
+
 
 &nbsp;
 
 
-Barrel is a portable header-only C++ library that provides programmatic access to the [Homebrew](https://brew.sh) command line interface.
+Barrel is a portable, header-only C++ library that provides programmatic access to the [Homebrew](https://brew.sh) command line interface.
 
-It is intended to help build generic, non-trivial wrappers around Homebrew. For example, using Barrel, you can write a GUI frontend for Homebrew on macOS. Or it can be used to develop bespoke tooling to customize/automate Homebrew-based package configuration for your CI/CD jobs. Or it can help you work with homebrew on headless systems.
+It is intended to help build generic, non-trivial wrappers around Homebrew. For example, using Barrel, you could write a GUI frontend for Homebrew on macOS. Or it could be used to develop bespoke tooling to customize/automate Homebrew-based package configuration for your CI/CD jobs. Or it could help you work with homebrew on headless systems.
 
 
 *tl;dr: Use Barrel whenever you want to interact with Homebrew and the shell interface just doesn't cut it.*
 
 
-Barrel exposes a [well documented](https://barrel.wiki/barrel_8h.html), succinct C++ API which can be integrated with a wide variety of libraries, tools and frameworks. Find more information in the [Wiki](https://github.com/aydwi/barrel/wiki).
+Barrel is highly performant, with almost no runtime overhead ([see benchmarks](https://github.com/aydwi/barrel/wiki/Benchmarking-%22Homebrew-via-Barrel%22-against-Homebrew)). It exposes a well documented, succinct C++ API ([see reference](https://barrel.wiki/barrel_8h.html)) which can be integrated with a wide variety of libraries, tools and frameworks ([see examples](https://github.com/aydwi/barrel/wiki)).
 
 
 &nbsp;
@@ -80,7 +81,7 @@ Further, you need an installation of Homebrew. Barrel does not install Homebrew 
 
 #### Optional requirements
 
-* GNU Make
+* Make
 * CMake (3.15 or higher)
 
 
@@ -89,7 +90,7 @@ Further, you need an installation of Homebrew. Barrel does not install Homebrew 
 
 ## Getting started
 
-1. Get the sources (git clone/[download](https://github.com/aydwi/barrel/archive/refs/heads/master.zip) for the latest developmental version, or get a versioned [release](https://github.com/aydwi/barrel/releases))
+1. Get the source (git clone/[download](https://github.com/aydwi/barrel/archive/refs/heads/master.zip) for the latest developmental version, or get a versioned [release](https://github.com/aydwi/barrel/releases))
 
 2. Build Barrel
 
@@ -101,16 +102,23 @@ Further, you need an installation of Homebrew. Barrel does not install Homebrew 
 
      These steps do the following: **1.** Create and enter a `build` directory in the project root, **2.** Configure the project and prepare a build configuration for the actual build system (Make in my case), and **3.** Call Make to build Barrel (by compiling/linking however specified), executing the predefined `install` target to install the library. You should see an `install/` directory in the project root after step 3. Since Barrel is header-only, all the sources in `include/` simply [get copied over](https://github.com/aydwi/barrel/blob/master/CMakeLists.txt#L58) to `install/Barrel/include/`.
 
+Alternatively, you can simply [**download a pre-built archive**](https://github.com/aydwi/barrel/wiki/Getting-a-pre-built-archive-of-Barrel).
 
-3. Link to Barrel from your project
 
-     * <ins>**As an external dependency**</ins>
+&nbsp;
+
+
+## Linking to Barrel
+
+Link to Barrel from your project:
+
+* <ins>**As an external dependency**</ins>
     
-          Say you have a project you want to include Barrel in, but you do not want to add Barrel to your project's source tree. In this case, you can include Barrel as an external dependency after building it.
+     Say you have a project you want to include Barrel in, but you do not want to add Barrel to your project's source tree. In this case, you can include Barrel as an external dependency after building it.
           
-          CMake [`find_package`](https://cmake.org/cmake/help/latest/command/find_package.html#find-package) makes it straightforward. I have included a simple CMakeLists.txt example you can consult at [`examples/external/CMakeLists.txt`](https://github.com/aydwi/barrel/blob/master/examples/cmake/external/CMakeLists.txt).
+     CMake [`find_package`](https://cmake.org/cmake/help/latest/command/find_package.html#find-package) makes it straightforward. I have included a simple CMakeLists.txt example you can consult at [`examples/external/CMakeLists.txt`](https://github.com/aydwi/barrel/blob/master/examples/cmake/external/CMakeLists.txt).
 
-     * <ins>**As an internal dependency**</ins>
+* <ins>**As an internal dependency**</ins>
 
 
 &nbsp;

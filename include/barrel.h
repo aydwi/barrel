@@ -22,8 +22,6 @@
  *         the library.
  */
 
-// TODO: Correct broken inheritance and introduce proper command types
-
 #ifndef BARREL_H__
 #define BARREL_H__
 
@@ -48,8 +46,8 @@ using namespace std::string_literals;
 template <typename>
 struct FalseType : std::false_type {};
 
-/*! \brief Set up a Homebrew execution environment.
- *         Further, customize and validate the execution environment.
+/*! \brief Set up a Homebrew execution environment. Further, customize and validate
+ *         the execution environment.
  */
 class Brew {
 private:
@@ -68,17 +66,16 @@ public:
 public:
     /*! \brief Default constructor for Brew.
      *
-     *  The simplest way to construct a Brew object. Barrel defaults the
-     *  target architecture to BrewTargetArch::X86_64 and correspondingly
-     *  the Homebrew installation path to BrewSpec::_BREW_DEFAULT_PATH_X86_64.
+     *  The simplest way to construct a Brew object. Barrel defaults the target architecture
+     *  to BrewTargetArch::X86_64 and correspondingly the Homebrew installation path to
+     *  BrewSpec::_BREW_DEFAULT_PATH_X86_64.
      *
      *  \sa BrewSpec
      */
     Brew();
 
-    /*! \brief A constructor for Brew, which allows you to specify your target
-     *         architecture. Homebrew installation path is set to the default
-     *         path for this architecture.
+    /*! \brief A constructor for Brew, which allows you to specify your target architecture.
+     *         Homebrew installation path is set to the default path for this architecture.
      *
      *  \param target_arch Target architecture
      *
@@ -86,9 +83,9 @@ public:
      */
     explicit Brew(BrewTargetArch);
 
-    /*! \brief A constructor for Brew, which allows you to specify a custom
-     *         location for your Homebrew installation, specifically the `brew`
-     *         binary. Barrel defaults the target architecture to BrewTargetArch::X86_64.
+    /*! \brief A constructor for Brew, which allows you to specify a custom location for
+     *         your Homebrew installation, specifically the `brew` binary. Barrel defaults
+     *         the target architecture to BrewTargetArch::X86_64.
      *
      *  \param install_path Custom `brew` installation path
      *
@@ -96,8 +93,8 @@ public:
      */
     explicit Brew(std::string const&);
 
-    /*! \brief A constructor for Brew, which allows you to specify both your target
-     *         architecture and a custom path for your Homebrew installation.
+    /*! \brief A constructor for Brew, which allows you to specify both your target architecture
+     *         and a custom path for your Homebrew installation.
      *
      *  \param target_arch Target architecture
      *  \param install_path Custom `brew` installation path
@@ -150,10 +147,9 @@ std::string const& Brew::getInstallVersion() const {
     return install_version_;
 }
 
-/*! \brief Work with Homebrew commands in your program including set-up,
- *         execution and retrieval of the results of arbitrary Homebrew
- *         commands. The template class must be instantiated with an
- *         appropriate type from the namespace ::BrewCommandType.
+/*! \brief Work with Homebrew commands in your program including set-up, execution and
+ *         retrieval of the results of arbitrary Homebrew commands. The template class
+ *         must be instantiated with an appropriate type from the namespace ::BrewCommandType.
  */
 template <EnumType E>
 class BrewCommand {
@@ -170,20 +166,16 @@ private:
 public:
     /*! \brief A variadic constructor for BrewCommand.
      *
-     *  This is the singular constructor offered by BrewCommand. Due
-     *  to it being variadic, an arbitrary number of arguments can be
-     *  passed to the constructor. Barrel expects you to pass a chain
-     *  of Homebrew arguments that follow your choice of command thereby
+     *  The singular (almighty) constructor offered by BrewCommand. Due to it being variadic,
+     *  an arbitrary number of arguments can be passed to the constructor. Barrel expects
+     *  you to pass a chain of Homebrew arguments that follow your choice of command thereby
      *  allowing any possible Homebrew command to be executed.
-     *
      *
      *  \param brew An object of type ::Brew
      *  \param cmd The brew command you want to execute
-     *  \param args A parameter pack representing in order,
-     *              the chain of options/text that follows
-     *              *cmd* as prescribed by Homebrew. The
-     *              following object types are allowed in the
-     *              parameter pack: `const char*`, `std::string`
+     *  \param args A parameter pack representing in order, the chain of options/text that
+     *              follow *cmd* as prescribed by Homebrew. The following object types are
+     *              allowed in the parameter pack: `const char*`, `std::string`
      *
      *  \sa BrewCommandType
      */
@@ -217,8 +209,9 @@ BrewCommand<E>::BrewCommand(Brew const& brew, E cmd, Args... args)
                     chain_ += LE_SPACER + arg;
                 // Consider string_view too
                 else
-                    static_assert(FalseType<Tt>::value, "Barrel Dev Error: Fix this if-constexpr to make it "
-                                                        "exhaustive with the types q_ supports");
+                    static_assert(FalseType<Tt>::value,
+                                  "BrewCommand(Brew const&, E, Args...): Barrel Dev Error! Fix the "
+                                  "if-constexpr to make it exhaustive wrt the types q_ supports");
             },
             q_.front());
         q_.pop();
