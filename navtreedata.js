@@ -29,12 +29,7 @@ var NAVTREE =
       [ "Quick example", "index.html#autotoc_md2", null ],
       [ "Elaborate example", "index.html#autotoc_md3", null ],
       [ "Project goals and non-goals", "index.html#autotoc_md4", null ],
-      [ "Requirements", "index.html#autotoc_md5", [
-        [ "[C++ wrapper for the Homebrew CLI]", "index.html#autotoc_md1", [
-          [ "Basic requirements", "index.html#autotoc_md6", null ],
-          [ "Optional requirements", "index.html#autotoc_md7", null ]
-        ] ]
-      ] ],
+      [ "Requirements", "index.html#autotoc_md5", null ],
       [ "Getting started", "index.html#autotoc_md8", null ],
       [ "Credits", "index.html#autotoc_md9", null ]
     ] ],
@@ -71,7 +66,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122fae1ec02a221942fbe375d060277c85011"
+"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122fafc27a4364395cf1d26fd253d49c2e407"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
