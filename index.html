@@ -140,7 +140,7 @@ Basic requirements</h3>
 <h3><a class="anchor" id="autotoc_md7"></a>
 Optional requirements</h3>
 <ul>
-<li>GNU Make</li>
+<li>Make</li>
 <li>CMake (3.15 or higher)</li>
 </ul>
 <p >&#160;</p>
@@ -154,17 +154,21 @@ Getting started</h1>
 <p class="startli"><code>cmake --build . --target install</code></p>
 <p class="startli">These steps do the following: <b>1.</b> Create and enter a <code>build</code> directory in the project root, <b>2.</b> Configure the project and prepare a build configuration for the actual build system (Make in my case), and <b>3.</b> Call Make to build Barrel (by compiling/linking however specified), executing the predefined <code>install</code> target to install the library. You should see an <code>install/</code> directory in the project root after step 3. Since Barrel is header-only, all the sources in <code>include/</code> simply <a href="https://github.com/aydwi/barrel/blob/master/CMakeLists.txt#L58">get copied over</a> to <code>install/Barrel/include/</code>.</p>
 </li>
-<li>Link to Barrel from your project<ul>
+</ol>
+<p >Alternatively, you can simply <a href="https://github.com/aydwi/barrel/wiki/Getting-a-pre-built-archive-of-Barrel"><b>download a pre-built archive</b></a>.</p>
+<p >&#160;</p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Linking to Barrel</h1>
+<p >Link to Barrel from your project:</p>
+<ul>
 <li><p class="startli"><ins><b>As an external dependency</b></ins></p>
 <p class="startli">Say you have a project you want to include Barrel in, but you do not want to add Barrel to your project's source tree. In this case, you can include Barrel as an external dependency after building it.</p>
 <p class="startli">CMake <a href="https://cmake.org/cmake/help/latest/command/find_package.html#find-package"><code>find_package</code></a> makes it straightforward. I have included a simple CMakeLists.txt example you can consult at <a href="https://github.com/aydwi/barrel/blob/master/examples/cmake/external/CMakeLists.txt"><code>examples/external/CMakeLists.txt</code></a>.</p>
 </li>
 <li><ins><b>As an internal dependency</b></ins></li>
 </ul>
-</li>
-</ol>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Credits</h1>
 <ul>
 <li>Project Logo: <a href="https://www.vecteezy.com/free-vector/icons">Vecteezy</a></li>
