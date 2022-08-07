@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Barrel: Barrel (Work in progress)</title>
+<title>Barrel: Barrel</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,12 +85,14 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Barrel (Work in progress) </div></div>
+  <div class="headertitle"><div class="title">Barrel </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="md_README"></a> <img src="https://user-images.githubusercontent.com/29029116/182253248-76daa80d-21b9-40bb-aa58-0911973c3330.svg" alt="barrel" style="pointer-events: none;" align="right" width="300" class="inline"/></p>
-<h3><a class="anchor" id="autotoc_md1"></a>
-[C++ wrapper for the Homebrew CLI]</h3>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Barrel (Work in progress)</h1>
+<h4><a class="anchor" id="autotoc_md1"></a>
+[C++ wrapper for the Homebrew CLI]</h4>
 <p ><a href="https://dl.circleci.com/status-badge/redirect/gh/aydwi/barrel/tree/master"><img src="https://img.shields.io/circleci/build/github/aydwi/barrel/master?label=static%20checks&amp;logo=circleci&amp;style=social" alt="CircleCI" class="inline"/></a> <a href="https://github.com/aydwi/barrel"><img src="https://img.shields.io/badge/Source--ffffff?style=social&amp;logo=github" alt="GitHub" class="inline"/></a> <a href="https://twitter.com/intent/tweet?text=Barrel%20-%20A%20C%2B%2B%20wrapper%20for%20the%20Homebrew%20CLI:&amp;url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel"><img src="https://img.shields.io/twitter/url?label=Share&amp;style=social&amp;url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel" alt="Twitter" class="inline"/></a></p>
 <p >&#160;</p>
 <p >Barrel is a portable, header-only C++ library that provides programmatic access to the <a href="https://brew.sh">Homebrew</a> command line interface.</p>
@@ -98,8 +100,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <p ><em>tl;dr: Use Barrel whenever you want to interact with Homebrew and the shell interface just doesn't cut it.</em></p>
 <p >Barrel is highly performant, with almost no runtime overhead (<a href="https://github.com/aydwi/barrel/wiki/Benchmarking-%22Homebrew-via-Barrel%22-against-Homebrew">see benchmarks</a>). It exposes a well documented, succinct C++ API (<a href="https://barrel.wiki/barrel_8h.html">see reference</a>) which can be integrated with a wide variety of libraries, tools and frameworks (<a href="https://github.com/aydwi/barrel/wiki">see examples</a>).</p>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Quick example</h1>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Quick example</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;Barrel/barrel.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"> </div>
@@ -119,33 +121,33 @@ Quick example</h1>
 <div class="ttc" id="aclass_brew_html"><div class="ttname"><a href="class_brew.html">Brew</a></div><div class="ttdoc">Set up a Homebrew execution environment. Further, customize and validate the execution environment.</div><div class="ttdef"><b>Definition:</b> barrel.h:52</div></div>
 </div><!-- fragment --><p >This is the "Hello, World!" equivalent of using Barrel. It creates a default <code>brew</code> object to set up Homebrew execution environment, then creates a <code>cmd</code> object to execute the command <code>brew info</code>, and finally prints the exit status and output of the executed command.</p>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Elaborate example</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Elaborate example</h2>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Project goals and non-goals</h1>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Project goals and non-goals</h2>
 <p ><a href="https://github.com/aydwi/barrel/wiki/Goals-and-Non-goals"><b>See the Wiki</b></a></p>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
-Requirements</h1>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Requirements</h2>
 <p >Barrel is a header-only library, written in <a href="https://en.cppreference.com/w/cpp/20">C++20</a>. Using it can be as simple as copying the <code>include/</code> directory in your project and importing the primary header like <code>"include/barrel.h"</code>. In most cases, however, you'd want to use a build system like <a href="https://www.gnu.org/software/make/">GNU Make</a>/<a href="https://ninja-build.org/">Ninja</a>, and a build automation tool like <a href="https://cmake.org/">CMake</a> to manage building your project.</p>
 <p >Further, you need an installation of Homebrew. Barrel does not install Homebrew for you. A <code>brew</code> binary must be available somewhere in your environment before using Barrel, although it is not necessary for it to be present in <code>$PATH</code>.</p>
-<h3><a class="anchor" id="autotoc_md6"></a>
-Basic requirements</h3>
+<h4><a class="anchor" id="autotoc_md6"></a>
+Basic requirements</h4>
 <ul>
 <li>macOS (10.15 or higher)</li>
 <li>Homebrew (<a href="https://docs.brew.sh/Installation#macos-requirements">requirements</a>)</li>
 <li>A C++ compiler (<a href="https://en.cppreference.com/w/cpp/compiler_support">C++20 or higher</a>) and the accompanying toolchain</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md7"></a>
-Optional requirements</h3>
+<h4><a class="anchor" id="autotoc_md7"></a>
+Optional requirements</h4>
 <ul>
 <li>Make</li>
 <li>CMake (3.15 or higher)</li>
 </ul>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
-Getting started</h1>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Getting started</h2>
 <ol type="1">
 <li>Get the source (git clone/<a href="https://github.com/aydwi/barrel/archive/refs/heads/master.zip">download</a> for the latest developmental version, or get a versioned <a href="https://github.com/aydwi/barrel/releases">release</a>)</li>
 <li><p class="startli">Build Barrel</p>
@@ -157,8 +159,8 @@ Getting started</h1>
 </ol>
 <p >Alternatively, you can simply <a href="https://github.com/aydwi/barrel/wiki/Getting-a-pre-built-archive-of-Barrel"><b>download a pre-built archive</b></a>.</p>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md9"></a>
-Linking to Barrel</h1>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Linking to Barrel</h2>
 <p >Link to Barrel from your project:</p>
 <ul>
 <li><p class="startli"><ins><b>As an external dependency</b></ins></p>
@@ -168,8 +170,8 @@ Linking to Barrel</h1>
 <li><ins><b>As an internal dependency</b></ins></li>
 </ul>
 <p >&#160;</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
-Credits</h1>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Credits</h2>
 <ul>
 <li>Project Logo: <a href="https://www.vecteezy.com/free-vector/icons">Vecteezy</a></li>
 <li>Documentation Generator: <a href="https://doxygen.nl/">Doxygen</a></li>

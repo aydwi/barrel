@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "Barrel", "index.html", [
-    [ "Barrel (Work in progress)", "index.html", [
+    [ "Barrel (Work in progress)", "index.html#autotoc_md0", [
       [ "Quick example", "index.html#autotoc_md2", null ],
       [ "Elaborate example", "index.html#autotoc_md3", null ],
       [ "Project goals and non-goals", "index.html#autotoc_md4", null ],

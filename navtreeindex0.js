@@ -24,7 +24,7 @@ var NAVTREEINDEX0 =
 "globals_func.html":[4,1,1],
 "hierarchy.html":[3,2],
 "index.html":[],
-"index.html":[0],
+"index.html#autotoc_md0":[0],
 "index.html#autotoc_md10":[0,6],
 "index.html#autotoc_md2":[0,0],
 "index.html#autotoc_md3":[0,1],
