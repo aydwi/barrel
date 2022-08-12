@@ -33,7 +33,9 @@ var NAVTREE =
       [ "Requirements", "index.html#autotoc_md6", null ],
       [ "Getting started", "index.html#autotoc_md9", null ],
       [ "Linking to Barrel", "index.html#autotoc_md10", null ],
-      [ "Credits", "index.html#autotoc_md11", null ]
+      [ "Credits", "index.html#autotoc_md11", null ],
+      [ "Build and test status", "index.html#autotoc_md12", null ],
+      [ "Footnotes", "index.html#autotoc_md13", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -68,7 +70,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122faeb970203d64f5491267a22dfef93037c"
+"types_8h.html#a8e460d8065f61c2b9b4ac946a6f7122fae00c29f94916fab05867445046ac14cc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

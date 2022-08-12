@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p ><a class="anchor" id="md_README"></a> <img src="https://user-images.githubusercontent.com/29029116/182253248-76daa80d-21b9-40bb-aa58-0911973c3330.svg" alt="barrel" style="pointer-events: none;" align="right" width="300" class="inline"/></p>
 <h3><a class="anchor" id="autotoc_md1"></a>
 [C++ wrapper for the Homebrew CLI]</h3>
-<p ><a href="https://dl.circleci.com/status-badge/redirect/gh/aydwi/barrel/tree/master"><img src="https://img.shields.io/circleci/build/github/aydwi/barrel/master?label=static%20checks&amp;logo=circleci&amp;style=flat" alt="CircleCI" class="inline"/></a> <a href="https://github.com/aydwi/barrel"><img src="https://img.shields.io/badge/Source--ffffff?style=social&amp;logo=github" alt="GitHub" class="inline"/></a> <a href="https://twitter.com/intent/tweet?text=Barrel%20-%20A%20C%2B%2B%20wrapper%20for%20the%20Homebrew%20CLI:&amp;url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel"><img src="https://img.shields.io/twitter/url?label=Share&amp;style=social&amp;url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel" alt="Twitter" class="inline"/></a></p>
+<p ><a href="https://github.com/aydwi/barrel"><img src="https://img.shields.io/badge/Source--ffffff?style=social&amp;logo=github" alt="GitHub" class="inline"/></a> <a href="https://twitter.com/intent/tweet?text=Barrel%20-%20A%20C%2B%2B%20wrapper%20for%20the%20Homebrew%20CLI:&amp;url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel"><img src="https://img.shields.io/twitter/url?label=Share&amp;style=social&amp;url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel" alt="Twitter" class="inline"/></a></p>
 <p >&#160;</p>
 <p >Barrel is a portable, header-only C++ library that provides programmatic access to the <a href="https://brew.sh">Homebrew</a> command line interface.</p>
 <p >It is intended to help build generic, non-trivial wrappers around Homebrew. For example, using Barrel, you could write a GUI frontend for Homebrew on macOS. Or it could be used to develop bespoke tooling to customize/automate Homebrew-based package configuration for your CI/CD jobs. Or it could help you work with homebrew on headless systems.</p>
@@ -130,8 +130,8 @@ Features</h1>
 <li>Validate and configure your Homebrew installation</li>
 <li>Chain and execute <em>any</em> arbitrary <code>brew</code> command (except those which read from <code>stdin</code> interactively, if any)</li>
 <li>Capture exit status, and <code>stdout</code>, <code>stderr</code>, or both</li>
-<li>Execute long running <code>brew</code> commands asynchronously (non-blocking calls), and retrieve the results at your convenience</li>
-<li>[WIP] Live-capture/poll output stream (<code>stdout</code>/<code>stderr</code>) data from a <code>brew</code> command as it is being generated</li>
+<li>[WIP] Execute long running <code>brew</code> commands asynchronously (with support for early binding/delayed invocation); retrieve the results at your convenience without blocking the main thread <sup><a href="https://github.com/aydwi/barrel/edit/master/README.md#1-helpful-for-example-when-writing-a-gui-wrapper-where-you-would-not-want-to-run-a-compute-heavy-routine-on-the-main-thread-to-keep-the-gui-responsive">[1]</a></sup></li>
+<li>[WIP] Live-capture/poll output stream (<code>stdout</code>/<code>stderr</code>) data from a <code>brew</code> command as it is being generated <sup><a href="https://github.com/aydwi/barrel/edit/master/README.md#2-again-helpful-when-writing-an-interactivereal-timegui-wrapper-around-homebrew-anecdotally-i-have-been-using-cakebrew-which-distinctly-lacks-this-functionality-as-of-v13-which-was-the-main-reason-i-started-this-project-in-the-first-place-i-wanted-the-ability-to-see-what-was-going-on-on-stdoutstderr-in-real-time-as-opposed-to-getting-a-bulk-of-text-dumped-at-once-after-the-execution-was-finished-i-like-cakebrew-but-perhaps-i-will-write-my-own-gui-for-homebrew-at-some-point-using-barrel-and-slint">[2]</a></sup></li>
 <li>[WIP] Execute <code>brew</code> commands on multiple threads to seriously cut-down on execution time on multi-core machines</li>
 </ul>
 </li>
@@ -193,8 +193,18 @@ Credits</h1>
 <li>Project Logo: <a href="https://www.vecteezy.com/free-vector/icons">Vecteezy</a></li>
 <li>Documentation Generator: <a href="https://doxygen.nl/">Doxygen</a></li>
 <li>Documentation Stylesheet: <a href="https://jothepro.github.io/doxygen-awesome-css/">Doxygen Awesome</a></li>
-<li>Documentation Host: <a href="https://pages.github.com/">GitHub Pages</a> </li>
+<li>Documentation Host: <a href="https://pages.github.com/">GitHub Pages</a></li>
+<li>CI Server: <a href="https://circleci.com/">CircleCI</a></li>
 </ul>
+<p >&#160;</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Build and test status</h1>
+<p ><a href="https://dl.circleci.com/status-badge/redirect/gh/aydwi/barrel/tree/master"><img src="https://dl.circleci.com/status-badge/img/gh/aydwi/barrel/tree/master.svg?style=svg" alt="CircleCI" style="pointer-events: none;" class="inline"/></a></p>
+<p >&#160;</p>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Footnotes</h1>
+<h5>[1] Helpful, for example, when writing a GUI wrapper where you would not want to run a compute heavy routine on the main thread to keep the GUI responsive.</h5>
+<h5>[2] Again, helpful when writing an interactive/real-time/GUI wrapper around Homebrew. Anecdotally, I have been using <a href="https://github.com/brunophilipe/Cakebrew">Cakebrew</a> which distinctly lacks this functionality (as of v1.3), which motivated me to start this project in the first place. I wanted the ability to see what was going on on <code>stdout</code>/<code>stderr</code> in real-time as opposed to getting a bulk of text dumped at once after the execution was finished. I like Cakebrew, but perhaps I will write my own GUI for Homebrew at some point using Barrel and <a href="https://github.com/slint-ui/slint">Slint</a>.</h5>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
