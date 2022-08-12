@@ -130,7 +130,7 @@ Features</h1>
 <li>Validate and configure your Homebrew installation</li>
 <li>Chain and execute <em>any</em> arbitrary <code>brew</code> command (except those which read from <code>stdin</code> interactively, if any)</li>
 <li>Capture exit status, and <code>stdout</code>, <code>stderr</code>, or both</li>
-<li><b>[WIP]</b> Execute long running <code>brew</code> commands asynchronously (with support for early binding/delayed invocation); retrieve the results at your convenience without blocking the main thread <sup><a href="https://github.com/aydwi/barrel#1-helpful-for-example-when-writing-a-gui-wrapper-where-you-would-not-want-to-run-a-compute-heavy-routine-on-the-main-thread-to-keep-the-gui-responsive"><b>[1]</b></a></sup></li>
+<li><b>[WIP]</b> Execute long running <code>brew</code> commands asynchronously (with support for early binding/delayed invocation) <sup><a href="https://github.com/aydwi/barrel#1-helpful-for-example-when-writing-a-gui-wrapper-where-you-would-not-want-to-run-a-compute-heavy-routine-on-the-main-thread-to-keep-the-gui-responsive"><b>[1]</b></a></sup></li>
 <li><b>[WIP]</b> Live-capture/poll output stream (<code>stdout</code>/<code>stderr</code>) data from a <code>brew</code> command as it is being generated <sup><a href="https://github.com/aydwi/barrel#2-again-helpful-when-writing-an-interactivereal-timegui-wrapper-around-homebrew-anecdotally-i-have-been-using-cakebrew-which-distinctly-lacks-this-functionality-as-of-v13-which-motivated-me-to-start-this-project-in-the-first-place-i-wanted-the-ability-to-see-what-was-going-on-on-stdoutstderr-in-real-time-as-opposed-to-getting-a-bulk-of-text-dumped-at-once-after-the-execution-was-finished-i-like-cakebrew-but-perhaps-i-will-write-my-own-gui-for-homebrew-at-some-point-using-barrel-and-slint"><b>[2]</b></a></sup></li>
 <li><b>[WIP]</b> Execute <code>brew</code> commands on multiple threads to seriously cut-down on execution time on multi-core machines</li>
 </ul>
@@ -203,7 +203,7 @@ Build and test status</h1>
 <p >&#160;</p>
 <h1><a class="anchor" id="autotoc_md13"></a>
 Footnotes</h1>
-<h5>[1] Helpful, for example, when writing a GUI wrapper where you would not want to run a compute heavy routine on the main thread.</h5>
+<h5>[1] Helpful, for example, when writing a GUI wrapper where you wouldn't want to block the main (UI) thread by running some compute-heavy routine.</h5>
 <h5>[2] Again, helpful when writing an interactive/real-time/GUI wrapper around Homebrew. Anecdotally, I have been using <a href="https://github.com/brunophilipe/Cakebrew">Cakebrew</a> which distinctly lacks this functionality (as of v1.3), which motivated me to start this project in the first place. I wanted the ability to see what was going on on <code>stdout</code>/<code>stderr</code> in real-time as opposed to getting a bulk of text dumped at once after the execution was finished. I like Cakebrew, but perhaps I will write my own GUI for Homebrew at some point using Barrel and <a href="https://github.com/slint-ui/slint">Slint</a>.</h5>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
