@@ -5,7 +5,6 @@
 
 #### [C++ wrapper for the Homebrew CLI]
 
-[![CircleCI](https://img.shields.io/circleci/build/github/aydwi/barrel/master?label=static%20checks&logo=circleci&style=social)](https://dl.circleci.com/status-badge/redirect/gh/aydwi/barrel/tree/master)
 [![GitHub](https://img.shields.io/badge/Source--ffffff?style=social&logo=github)](https://github.com/aydwi/barrel)
 [![Twitter](https://img.shields.io/twitter/url?label=Share&style=social&url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel)](https://twitter.com/intent/tweet?text=Barrel%20-%20A%20C%2B%2B%20wrapper%20for%20the%20Homebrew%20CLI:&url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel)
 
@@ -53,7 +52,32 @@ This is the "Hello, World!" equivalent of using Barrel. It creates a default `br
 &nbsp;
 
 
+## Features
+
+* Header-only; no need to build before using
+* Self contained; no external dependencies
+* Readable, modern C++ source; easy to modify if needed
+* Negligible runtime overhead
+
+* Powerful ways to interact with Homebrew:
+     * Validate and configure your Homebrew installation
+     * Chain and execute _any_ arbitrary `brew` command (except those which read from `stdin` interactively, if any)
+     * Capture exit status, and `stdout`, `stderr`, or both
+     * **[WIP]** Execute long running `brew` commands asynchronously (with support for early binding/delayed invocation) <sup>[**[1]**](https://github.com/aydwi/barrel#1-helpful-for-example-when-writing-a-gui-wrapper-where-you-would-not-want-to-run-a-compute-heavy-routine-on-the-main-thread-to-keep-the-gui-responsive)</sup>
+     * **[WIP]** Live-capture/poll output stream (`stdout`/`stderr`) data from a `brew` command as it is being generated <sup>[**[2]**](https://github.com/aydwi/barrel#2-again-helpful-when-writing-an-interactivereal-timegui-wrapper-around-homebrew-anecdotally-i-have-been-using-cakebrew-which-distinctly-lacks-this-functionality-as-of-v13-which-motivated-me-to-start-this-project-in-the-first-place-i-wanted-the-ability-to-see-what-was-going-on-on-stdoutstderr-in-real-time-as-opposed-to-getting-a-bulk-of-text-dumped-at-once-after-the-execution-was-finished-i-like-cakebrew-but-perhaps-i-will-write-my-own-gui-for-homebrew-at-some-point-using-barrel-and-slint)</sup>
+     * **[WIP]** Execute `brew` commands on multiple threads to seriously cut-down on execution time on multi-core machines
+
+
+&nbsp;
+
+
 ## Elaborate example
+
+Now let's take a look at another example which shows how a client can use some of the advanced functionality offered by Barrel.
+
+```cpp
+
+```
 
 
 &nbsp;
@@ -90,7 +114,7 @@ Further, you need an installation of Homebrew. Barrel does not install Homebrew 
 
 ## Getting started
 
-1. Get the source (git clone/[download](https://github.com/aydwi/barrel/archive/refs/heads/master.zip) for the latest developmental version, or get a versioned [release](https://github.com/aydwi/barrel/releases))
+1. Get the source (`git clone` for the latest developmental version, or get a versioned [release](https://github.com/aydwi/barrel/releases))
 
 2. Build Barrel
 
@@ -126,7 +150,28 @@ Link to Barrel from your project:
 
 ## Credits
 
+
 * Project Logo: [Vecteezy](https://www.vecteezy.com/free-vector/icons)
 * Documentation Generator: [Doxygen](https://doxygen.nl/)
 * Documentation Stylesheet: [Doxygen Awesome](https://jothepro.github.io/doxygen-awesome-css/)
 * Documentation Host: [GitHub Pages](https://pages.github.com/)
+* CI Server: [CircleCI](https://circleci.com/)
+
+
+&nbsp;
+
+
+## Build and test status
+
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/aydwi/barrel/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/aydwi/barrel/tree/master)
+
+
+&nbsp;
+
+
+## Footnotes
+
+###### [1] Helpful, for example, when writing a GUI wrapper where you wouldn't want to block the main (UI) thread by running some compute-heavy routine.
+
+###### [2] Again, helpful when writing an interactive/real-time/GUI wrapper around Homebrew. Anecdotally, I have been using [Cakebrew](https://github.com/brunophilipe/Cakebrew) which distinctly lacks this functionality (as of v1.3), which motivated me to start this project in the first place. I wanted the ability to see what was going on on `stdout`/`stderr` in real-time as opposed to getting a bulk of text dumped at once after the execution was finished. I like Cakebrew, but perhaps I will write my own GUI for Homebrew at some point using Barrel and [Slint](https://github.com/slint-ui/slint).

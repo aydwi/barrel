@@ -28,6 +28,7 @@
 #include <array>
 #include <cstddef>
 #include <cstdio>
+#include <future>
 #include <memory>
 #include <stdexcept>
 #include <string>
