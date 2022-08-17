@@ -11,11 +11,13 @@
 
 &nbsp;
 
+<p align="justify">
 
 Barrel is a portable, header-only C++ library that provides programmatic access to the [Homebrew](https://brew.sh) command line interface.
 
 It is intended to help build generic, non-trivial wrappers around Homebrew. For example, using Barrel, you could write a feature-rich GUI frontend for Homebrew on macOS. Or it could be used to develop bespoke tooling to customize/automate Homebrew-based package configuration for your CI/CD jobs. Or it could help you work with homebrew on headless systems.
 
+</p>
 
 ###### *tl;dr: Use Barrel whenever you want to interact with Homebrew and the shell interface just doesn't cut it.*
 
