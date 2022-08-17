@@ -94,8 +94,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <p ><a href="https://github.com/aydwi/barrel"><img src="https://img.shields.io/badge/Source--ffffff?style=social&amp;logo=github" alt="GitHub" class="inline"/></a> <a href="https://twitter.com/intent/tweet?text=Barrel%20-%20A%20C%2B%2B%20wrapper%20for%20the%20Homebrew%20CLI:&amp;url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel"><img src="https://img.shields.io/twitter/url?label=Share&amp;style=social&amp;url=https%3A%2F%2Fgithub.com%2Faydwi%2Fbarrel" alt="Twitter" class="inline"/></a></p>
 <p >&#160;</p>
 <p >Barrel is a portable, header-only C++ library that provides programmatic access to the <a href="https://brew.sh">Homebrew</a> command line interface.</p>
-<p >It is intended to help build generic, non-trivial wrappers around Homebrew. For example, using Barrel, you could write a GUI frontend for Homebrew on macOS. Or it could be used to develop bespoke tooling to customize/automate Homebrew-based package configuration for your CI/CD jobs. Or it could help you work with homebrew on headless systems.</p>
-<p ><em>tl;dr: Use Barrel whenever you want to interact with Homebrew and the shell interface just doesn't cut it.</em></p>
+<p >It is intended to help build generic, non-trivial wrappers around Homebrew. For example, using Barrel, you could write a feature-rich GUI frontend for Homebrew on macOS. Or it could be used to develop bespoke tooling to customize/automate Homebrew-based package configuration for your CI/CD jobs. Or it could help you work with homebrew on headless systems.</p>
+<h5><em>tl;dr: Use Barrel whenever you want to interact with Homebrew and the shell interface just doesn't cut it.</em></h5>
 <p >Barrel is highly performant, with almost no runtime overhead (<a href="https://github.com/aydwi/barrel/wiki/Benchmarking-%22Homebrew-via-Barrel%22-against-Homebrew">see benchmarks</a>). It exposes a well documented, succinct C++ API (<a href="https://barrel.wiki/barrel_8h.html">see reference</a>) which can be integrated with a wide variety of libraries, tools and frameworks (<a href="https://github.com/aydwi/barrel/wiki">see examples</a>).</p>
 <p >&#160;</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
@@ -174,7 +174,7 @@ Getting started</h1>
 <p class="startli">These steps do the following: <b>1.</b> Create and enter a <code>build</code> directory in the project root, <b>2.</b> Configure the project and prepare a build configuration for the actual build system (Make in my case), and <b>3.</b> Call Make to build Barrel (by compiling/linking however specified), executing the predefined <code>install</code> target to install the library. You should see an <code>install/</code> directory in the project root after step 3. Since Barrel is header-only, all the sources in <code>include/</code> simply <a href="https://github.com/aydwi/barrel/blob/master/CMakeLists.txt#L58">get copied over</a> to <code>install/Barrel/include/</code>.</p>
 </li>
 </ol>
-<p >Alternatively, you can simply <a href="https://github.com/aydwi/barrel/wiki/Getting-a-pre-built-archive-of-Barrel"><b>download a pre-built archive</b></a>.</p>
+<p >Alternatively, you could <a href="https://github.com/aydwi/barrel/wiki/Getting-a-pre-built-archive-of-Barrel"><b>download a pre-built archive</b></a>.</p>
 <p >&#160;</p>
 <h1><a class="anchor" id="autotoc_md10"></a>
 Linking to Barrel</h1>
