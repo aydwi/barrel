@@ -14,10 +14,10 @@
 
 Barrel is a portable, header-only C++ library that provides programmatic access to the [Homebrew](https://brew.sh) command line interface.
 
-It is intended to help build generic, non-trivial wrappers around Homebrew. For example, using Barrel, you could write a GUI frontend for Homebrew on macOS. Or it could be used to develop bespoke tooling to customize/automate Homebrew-based package configuration for your CI/CD jobs. Or it could help you work with homebrew on headless systems.
+It is intended to help build generic, non-trivial wrappers around Homebrew. For example, using Barrel, you could write a feature-rich GUI frontend for Homebrew on macOS. Or it could be used to develop bespoke tooling to customize/automate Homebrew-based package configuration for your CI/CD jobs. Or it could help you work with homebrew on headless systems.
 
 
-*tl;dr: Use Barrel whenever you want to interact with Homebrew and the shell interface just doesn't cut it.*
+###### *tl;dr: Use Barrel whenever you want to interact with Homebrew and the shell interface just doesn't cut it.*
 
 
 Barrel is highly performant, with almost no runtime overhead ([see benchmarks](https://github.com/aydwi/barrel/wiki/Benchmarking-%22Homebrew-via-Barrel%22-against-Homebrew)). It exposes a well documented, succinct C++ API ([see reference](https://barrel.wiki/barrel_8h.html)) which can be integrated with a wide variety of libraries, tools and frameworks ([see examples](https://github.com/aydwi/barrel/wiki)).
@@ -126,7 +126,7 @@ Further, you need an installation of Homebrew. Barrel does not install Homebrew 
 
      These steps do the following: **1.** Create and enter a `build` directory in the project root, **2.** Configure the project and prepare a build configuration for the actual build system (Make in my case), and **3.** Call Make to build Barrel (by compiling/linking however specified), executing the predefined `install` target to install the library. You should see an `install/` directory in the project root after step 3. Since Barrel is header-only, all the sources in `include/` simply [get copied over](https://github.com/aydwi/barrel/blob/master/CMakeLists.txt#L58) to `install/Barrel/include/`.
 
-Alternatively, you can simply [**download a pre-built archive**](https://github.com/aydwi/barrel/wiki/Getting-a-pre-built-archive-of-Barrel).
+Alternatively, you could [**download a pre-built archive**](https://github.com/aydwi/barrel/wiki/Getting-a-pre-built-archive-of-Barrel).
 
 
 &nbsp;
